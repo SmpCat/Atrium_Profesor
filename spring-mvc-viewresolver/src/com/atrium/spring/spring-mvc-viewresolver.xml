@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" default-lazy-init="true"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- DEFINICION DE SPRING MVC -->
+	<context:component-scan base-package="com.atrium.controller" />
+
+	<mvc:annotation-driven />
+
+	<!-- ***** RESOLUTOR DE VISTAS ****** -->
+	<!-- SOLUCION ESPECIFICA PARA TILES 2 -->
+	<bean id="tilesResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<!-- AUXILIAR PARA LA GESTION DE LA VISTAS - GESTION DINAMICA DE TILES -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
+		<!-- ORDEN EN EL QUE ACTUA EL RESOLUTOR DE VISTAS -->
+		<property name="order" value="0" />
+	</bean>
+	<!-- COMPONENTE QUE LEE LA INFORMACION DE LOS FICHEROS XML DE CONFIGURACION 
+		DE TILES -->
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer"
+		lazy-init="false">
+		<!-- RUTA Y NOMBRE DEL FICHERO DE CONFIGURACION DE TILES -->
+		<property name="definitions">
+			<list>
+				<value>/xml-tiles/definicion_zonastiles.xml</value>
+			</list>
+		</property>
+	</bean>
+	<!-- ***** FIN RESOLUTOR DE VISTAS ****** -->
+
+	<!-- ********** OTRAS OPCIONES DE VIEW RESOLVER ********** -->
+	<!-- RESOLUTOR DE VISTAS BASICO PARA PAGINAS JSP CON EXPRESIONES DINAMICAS -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- AUXILIAR PARA LA GESTION DE LA VISTAS - USO DE EXPRESIONES DINAMICAS 
+			JSTL -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<!-- RUTA Y EXTENSION DE LA PAGINA A CARGAR -->
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+		<!-- ORDEN EN EL QUE ACTUA EL RESOLUTOR DE VISTAS -->
+		<property name="order" value="2" />
+	</bean>
+	<!-- RESOLUTOR DE VISTAS VIA XML -->
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+		<!-- LOCALIZACION DEL FICHERO DE XML -->
+		<property name="location" value="classpath:com/atrium/rutas/spring-vistas.xml" />
+		<!-- ORDEN EN EL QUE ACTUA EL RESOLUTOR DE VISTAS -->
+		<property name="order" value="1" />
+	</bean>
+	<!-- RESOLUTOR DE VISTA VIA PROPERTIES -->
+	<bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<!-- LOCALIZACION DEL FICHERO PROPERTIES -->
+		<property name="basename" value="/rutas_paginas" />
+		<!-- ORDEN EN EL QUE ACTUA EL RESOLUTOR DE VISTAS -->
+		<property name="order" value="4" />
+	</bean>
+</beans>		

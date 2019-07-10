@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!-- Pagina de prueba -->
+<!-- fecha: 27-4-2017. -->
+<!-- version: 2.7-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+<h:head>
+	<title>JSF 2.2 Page</title>
+	<meta name="keywords" content="enter,your,keywords,here" />
+	<meta name="description" content="A short description of this page." />
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	<!-- FORMULARIO DE PRUEBA INICIAL -->
+	<h:form id="formu_prueba">
+		<!-- CONTENEDOR -->
+		<h:panelGrid id="panel_prueba" columns="2">
+			<!-- COMPONENTES -->
+			<h:outputText id="eti_prueba" value="Etiqueta texto:" />
+			<h:inputText id="texto_prueba" value="#{prueba_inicial.texto_prueba}" />
+			<h:commandButton id="boton" action="#{prueba_inicial.metodo_Accion}"
+				actionListener="#{prueba_inicial.metodo_Evento}" value="Boton" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

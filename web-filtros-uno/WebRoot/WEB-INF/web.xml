@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB EVENTOS -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 16-11-2016 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- ***** COMPONENTES DE UNA APLICACION WEB ***** -->
+	<!-- SERVLET -->
+	<servlet>
+		<description>Servlet inicial de logado</description>
+		<servlet-name>Servlet_Login</servlet-name>
+		<servlet-class>com.atrium.servlets.Servlet_Login</servlet-class>
+	</servlet>
+	<!-- PETICIONES QUE ATENDERA EL SERVLET -->
+	<servlet-mapping>
+		<servlet-name>Servlet_Login</servlet-name>
+		<url-pattern>/Servlet_Login</url-pattern>
+	</servlet-mapping>
+	<!-- FIN SERVLET -->
+
+	<!-- ********** ZONA DE FILTROS ********** -->
+	<!-- PROCESOS DE INICIO DE APLICACION -->
+	<!-- FILTRO PARA ESTABLECER EL IDIOMA POR DEFECTO PARA CADA USUARIO -->
+	<filter>
+		<description>A partir de la cabecera de la peticion averiguremos el/los idiomas preferidos por usuario y lo 
+		estableceremos como atributo de sesionpara su posterior uso en los procesos de idiomatizacion </description>
+		<filter-name>filtro_idiomas</filter-name>
+		<filter-class>com.atrium.filtros.Filtro_Idioma</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filtro_idiomas</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
+	<!-- FILTRO PARA ESTABLECER EL NAVEGADOR USUADO POR EL CLIENTE -->
+	<filter>
+		<description>A partir de la cabecera de la peticion averiguremos el navegador usado y
+		 guardamos la informacion para su posterior uso</description>
+		<filter-name>filtro_navegador</filter-name>
+		<filter-class>com.atrium.filtros.Filtro_Navegador</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filtro_navegador</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
+	<!-- FIN PROCESOS DE INICIO DE APLICACION -->
+	<!-- ********** FIN ZONA DE FILTROS ********** -->
+
+	<!-- ** ZONA DE PARAMETROS INICIALES DE CONFIGURACION DE LA APLICACION ** -->
+	<!-- ESTABLECEMOS EL IDIOMA (es ESPAÑOL en INGLES fr FRANCES) -->
+	<context-param>
+		<description>establece el idioma inicial en caso de que el usuario trabaja con alguno 
+		del que no se posea traduccion</description>
+		<param-name>idioma_por_defecto</param-name>
+		<param-value>es</param-value>
+	</context-param>
+	<!-- ** FIN ZONA PARAMETROS INICIALES CONFIGURACION DE LA APLICACION ** -->
+
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+
+
+	<!-- CONFIGURACION DE PAGINAS DE ERROR A NIVEL DE APLICACION -->
+	<!-- TRATAMIENTO EN FUNCION DEL CODIGO DE ERROR DE HTTP -->
+	<error-page id="error_http">
+		<error-code>500</error-code>
+		<location>/jsp/errores/error_http.jsp</location>
+	</error-page>
+	<!-- TRATAMIENTO EN FUNCION DE LA EXCEPCION CONCRETA DE JAVA -->
+	<error-page id="error_java">
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/jsp/errores/error_java.jsp</location>
+	</error-page>
+
+</web-app>

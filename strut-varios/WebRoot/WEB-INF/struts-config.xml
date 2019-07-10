@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- ****** FICHERO DE CONFIGURACION DE STRUT 1.X ****** -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 6-11-2017. ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<struts-config>
+	<form-beans />
+	<global-exceptions>
+		<!-- DEFINICION DE TRATAMIENTO GLOBAL Y PERSONALIZADO DE EXCEPCION -->
+		<!-- KEY: Clave del mensaje a mostrar -->
+		<!-- TYPE: Tipo de error producido -->
+		<!-- PATH: Ruta y nombre de pagina de error -->
+		<exception key="error.global.mesage" type="java.io.IOException"
+			path="/jsp/error.jsp" />
+		<!-- DEFINICION DE TRATAMIENTO GLOBAL DE EXCEPCION CON UNA CLASE PROPIA -->
+		<!-- KEY: Clave del mensaje a mostrar -->
+		<!-- TYPE: Tipo de error producido -->
+		<!-- PATH: Ruta y nombre de pagina de error -->
+		<!-- HANDLER: Clase propia para tratar la excepcion -->
+		<exception key="error.global.mesage" type="java.io.IOException"
+			handler="com.mkyong.common.exception.MyCustomExceptionHandler" path="/jsp/error.jsp" />
+	</global-exceptions>
+	<global-forwards />
+	<action-mappings>
+		<!-- ACCION PARA LA PRUEBA DE TRATAMIENTO DE ERROR -->
+		<action path="/accion_erronea" type="com.atrium.acciones.Accion_Error">
+			<!-- DEFINICION DE TRATAMIENTO ESPECIFICO DE UNA ACCION -->
+			<exception key="error.prueba" type="java.lang.Exception"
+				handler="com.atrium.acciones.Tratamiento_Error" path="/jsp/error.jsp" />
+		</action>
+		<!-- ACCION DE NAVEGACION -->
+		<!-- PARAMETER: Ruta y nombre la pagina llamada -->
+		<action path="/navegacion" type="org.apache.struts.actions.ForwardAction"
+			parameter="/jsp/otra_pagina.jsp"></action>
+	</action-mappings>
+	<message-resources parameter="com.atrium.idiomas.textos_es" />
+</struts-config>
+

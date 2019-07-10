@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<!-- FICHERO DE CONFIGURACION DE ETIQUETAS PERSONALIZADAS -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 22-11-2016 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>jsg</short-name>
+
+	<tag>
+		<name>listas_paises</name>
+		<tag-class>com.atrium.etiquetas.Lista_Paises</tag-class>
+		<body-content>tagdependent</body-content>
+		<description>GENERACION DINAMICA DEL CONTENIDO DEL COMBO DE PAISES</description>
+		<attribute>
+			<name>campo</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>INDICARA POR QUE CAMPO SE QUIERE ORDENAR LA LISTA (C/N)
+				C- CODIGO PAIS N- NOMBRE PAIS</description>
+		</attribute>
+		<attribute>
+			<name>sentido</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>INDICARA EN QUE SENTIDO SE ORDENA (A/D) A- ASCENDENTE D
+				- DESCENDENTE</description>
+		</attribute>
+		<attribute>
+			<name>pais_seleccionado</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>INDICARA EL PAIS QUE EL USUARIO SELECCIONE EN EL
+				NAVEGADOR</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>lista_provincias</name>
+		<tag-class>com.atrium.etiquetas.Lista_Provincias</tag-class>
+		<body-content>tagdependent</body-content>
+		<attribute>
+			<name>pais_seleccionado</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>PAIS SELECCIONADO POR EL USUARIO</description>
+		</attribute>
+		<attribute>
+			<name>provincia_seleccionado</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>PROVINCIA SELECCIONADO POR EL USUARIO</description>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>lista_municipios</name>
+		<tag-class>com.atrium.etiquetas.Lista_Municipios</tag-class>
+		<body-content>tagdependent</body-content>
+		<attribute>
+			<name>provincia_seleccionado</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>PROVINCIA SELECCIONADO POR EL USUARIO</description>
+		</attribute>
+	</tag>
+
+</taglib>

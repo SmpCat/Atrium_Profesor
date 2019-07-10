@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE RECETA [
+        <!ELEMENT TITULO (#PCDATA)>
+        <!ELEMENT GENERAL EMPTY>
+        <!ELEMENT INGREDIENTES (INGREDIENTE*) >
+        <!ELEMENT PROCEDIMIENTO (#PCDATA)>
+        <!ELEMENT INGREDIENTE EMPTY >        
+        <!ATTLIST GENERAL
+                COCINA CDATA #REQUIRED
+                DIFICULTAD (facil | media | alta) #REQUIRED
+                TIPO (sopas | carnes | verduras | salsa | guarnición) #REQUIRED
+        >
+        <!ATTLIST INGREDIENTE
+                NOMBRE CDATA #REQUIRED
+                CANTIDAD CDATA #REQUIRED
+                UNIDAD CDATA #REQUIRED
+        >
+]>
+<RECETA>
+        <TITULO>Sopa Vegetal con Macarrones</TITULO>
+        <GENERAL TIPO="primer plato" CLASE="sopa pasta" NACIONALIDAD="" REGION="" COCINA="bizantina"  PROCEDENCIA="El Mundo. El Reportaje de la Historia. Sabado 1 de julio de 2000."/>
+	<INGREDIENTES COMENSALES="1">
+                <INGREDIENTE NOMBRE="habichuelas" CANTIDAD="250" UNIDAD="gr" PRINCIPAL="si" />
+                <INGREDIENTE NOMBRE="guisantes" CANTIDAD="250" UNIDAD="gr" PRINCIPAL="si" />
+                <INGREDIENTE NOMBRE="cebollas" CANTIDAD="2" UNIDAD="pieza" PRINCIPAL="si" />
+                <INGREDIENTE NOMBRE="tomates" CANTIDAD="2" UNIDAD="pieza" PRINCIPAL="si"/>
+                <INGREDIENTE NOMBRE="aceite" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="agua" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="calabacines" CANTIDAD="1" UNIDAD="pieza" />
+                <INGREDIENTE NOMBRE="dientes de ajo" CANTIDAD="3-4" UNIDAD="pieza" />
+                <INGREDIENTE NOMBRE="macarrones" CANTIDAD="500" UNIDAD="gr" PRINCIPAL="si"/>
+                <INGREDIENTE NOMBRE="tomillo" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="laurel" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="pimienta blanca" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="pimienta negra" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="sal" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="azafr n" CANTIDAD="" UNIDAD="" />
+        </INGREDIENTES>
+        <PROCEDIMIENTO>
+                La noche anterior se dejan en remojo habichuelas blancas y guisantes secos. En el momento de la elaboraci¢n se pelan las cebollas y los tomates cortados a trozos que se rehogar n en una cazuela con aceite caliente. Pasados unos minutos se a¤aden el calabac¡n, pelado y troceado, y los dientes de ajo, y se condimenta con unas pizcas de tomillo, perejil, sal, pimienta negra, pimienta blanca y azafr n. A esta meczla se a¤ade agua caliente, las habichuelas y los guisantes que, previamente han sido remojados. Todo ello se cuece a fuego lento.
+                Mientras, en una olla aparte, se dejan los macarrones cociendo en agua hirviendo y sal. Se escurren y se a¤aden a la sopa.
+                Se sirve caliente.
+        </PROCEDIMIENTO>
+</RECETA>

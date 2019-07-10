@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- DEFINICION DEL DOCUMENTO XML VALIDADOR DEL EJERCICIO DE FORMULARIO -->
+<!-- autor: Juan Antonio Solves Garcia -->
+<!-- version: 1.0 -->
+<!-- fecha: 29-9-2016 -->
+<!ELEMENT datos_formulario (fecha,autor,formulario) >
+<!ELEMENT fecha (#PCDATA) >
+<!ELEMENT autor (#PCDATA) >
+<!ELEMENT formulario (nombre,apellido,calle,ciudad)>
+<!ELEMENT nombre (#PCDATA) >
+<!ELEMENT apellido (#PCDATA) >
+<!ELEMENT calle (#PCDATA) >
+<!ELEMENT ciudad (#PCDATA) >

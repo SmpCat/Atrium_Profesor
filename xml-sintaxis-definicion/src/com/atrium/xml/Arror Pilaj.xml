@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE RECETA [
+        <!ELEMENT TITULO (#PCDATA)>
+        <!ELEMENT GENERAL EMPTY>
+        <!ELEMENT INGREDIENTES (INGREDIENTE*) >
+        <!ELEMENT PROCEDIMIENTO (#PCDATA)>
+        <!ELEMENT INGREDIENTE EMPTY >        
+        <!ATTLIST GENERAL
+                COCINA CDATA #REQUIRED
+                DIFICULTAD (facil | media | alta) #REQUIRED
+                TIPO (sopas | carnes | verduras | salsa | guarnición) #REQUIRED
+        >
+        <!ATTLIST INGREDIENTE
+                NOMBRE CDATA #REQUIRED
+                CANTIDAD CDATA #REQUIRED
+                UNIDAD CDATA #REQUIRED
+        >
+]>
+
+<RECETA>
+        <TITULO>Crema de puerros</TITULO>
+        <GENERAL COCINA="española" DIFICULTAD="facil" TIPO="sopas" />
+        <INGREDIENTES>
+                <INGREDIENTE NOMBRE="puerros" CANTIDAD="2500" UNIDAD="gramo" />
+                <INGREDIENTE NOMBRE="patatas" CANTIDAD="3" UNIDAD="pieza" />
+                <INGREDIENTE NOMBRE="arroz" CANTIDAD="3" UNIDAD="cucharada" />
+                <INGREDIENTE NOMBRE="pechuga de pollo" CANTIDAD="250" UNIDAD="gramo"  />
+                <INGREDIENTE NOMBRE="mantequilla" CANTIDAD="1" UNIDAD="cucharada" />
+                <INGREDIENTE NOMBRE="nata líquida" CANTIDAD="500" UNIDAD="gramo" />
+                <INGREDIENTE NOMBRE="pimienta molida" CANTIDAD="" UNIDAD=""/>
+                <INGREDIENTE NOMBRE="nuez moscada" CANTIDAD="" UNIDAD=""/>
+        </INGREDIENTES>
+        <PROCEDIMIENTO>
+                Se aromatiza el arroza con clavo, laurel, canela y vainas de cardamomo y se cuece con almendras y pasas. Se sirve, una vez escurrido, con cebollas fritas y se utiliza para acompa¤ar.
+        </PROCEDIMIENTO>
+</RECETA>
+

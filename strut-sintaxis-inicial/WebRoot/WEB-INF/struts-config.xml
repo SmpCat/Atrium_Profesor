@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- ****** FICHERO DE CONFIGURACION DE STRUT ** EJEMPLO NO FUNCIONAL ****** -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 12-12-2016 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<struts-config>
+	<!-- ******** ZONA DE OBJETOS DE DOMINIO (DATOS)******** -->
+	<form-beans>
+		<!-- DEFICION DE OBJETO DE DOMINIO DE STRUT -->
+		<form-bean name="NOMBRE -- IDENTIFICADOR" type="RUTA Y NOMBRE DE CLASE" />
+	</form-beans>
+
+	<!-- ******** ZONA DE EXCEPCIONES ******** -->
+	<global-exceptions>
+		<exception type="java.lang.Exception" handler="PAQUETES  Y CLASE"
+			path="/RUTA Y NOMBRE DE LA PAGINA " />
+	</global-exceptions>
+
+	<!-- ******** ZONA DE FORWARD (NAVEGACION) ******** -->
+	<global-forwards>
+		<!-- DEFICION DE NAVEGACION EN STRUT -->
+		<forward name="NOMBRE -- IDENTIFICADOR" path="RUTA Y NOMBRE DE LA PAGINA" />
+	</global-forwards>
+
+	<!-- ******** ZONA DE ACCIONES ******** -->
+	<action-mappings>
+		<!-- DEFINICION DE ACCION -->
+		<action path="/NOMBRE -- IDENTIFICADOR" type="RUTA Y NOMBRE DE LA PAGINA"
+			name="NOMBRE -- IDENTIFICADOR DEL FORMBEAN" input="RUTA Y NOMBRE DE LA PAGINA EN CASO DE ERROR EN VALIDACION">
+			<forward name="NOMBRE -- IDENTIFICADOR" path="RUTA Y NOMBRE DE LA PAGINA" />
+		</action>
+	</action-mappings>
+
+	<!-- ******** ZONA RECURSOS IDIOMATICOS ******** -->
+	<message-resources parameter="RUTA Y NOMBRE DEL FICHERO PROPERTIE"
+		key="NOMBRE -- IDENTIFICADOR DEL RECURSO" />
+
+	<!-- ******** ZONA CARGA DE OPCIONES ADICIONALES (TILES) ******** -->
+	<plug-in className="RUTA Y NOMBRE DE LA CLASE">
+		<set-property value="NOMBRE PROPIEDAD" property="VALOR PROPIEDAD" />
+	</plug-in>
+</struts-config>
+

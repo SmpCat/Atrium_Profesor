@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="master" database="MASTER" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="ARTICULOS">
+      <Drawing expanded="true" location="0,248" dimensions="267,109" />
+      <Columns>
+        <Column name="CODIGO_ARTICULO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="DESCRIPCION_ARTICULO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="PRECIO_UNIDAD_ARTICULO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="CANTIDAD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PROVEEDORES">
+      <Drawing expanded="true" location="367,168" dimensions="301,269" />
+      <Columns>
+        <Column name="CODIGO_PROVEEDOR" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="11" />
+        </Column>
+        <Column name="NOMBRE_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="CIF_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="10" />
+        </Column>
+        <Column name="NOMBRE_COMERCIAL_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CALLE_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CIUDAD_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CP_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="PROVINCIA_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="TELEFONO_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="9" />
+        </Column>
+        <Column name="FAX_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="9" />
+        </Column>
+        <Column name="EMAIL_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="OBSERVACIONES_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CLOB" size="4000" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PROVEEDORES_ARTICULOS">
+      <Drawing expanded="true" location="214,0" dimensions="222,68" />
+      <Columns>
+        <Column name="CODIGO_PROVEEDOR" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="11" />
+        </Column>
+        <Column name="CODIGO_ARTICULO" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="20" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="PROV_ART_COD_ART_FK">
+      <Details primary_table="ARTICULOS" foreign_table="PROVEEDORES_ARTICULOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_ARTICULO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_ARTICULO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="PROV_ART_COD_PROV_FK">
+      <Details primary_table="PROVEEDORES" foreign_table="PROVEEDORES_ARTICULOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_PROVEEDOR" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_PROVEEDOR" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

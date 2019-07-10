@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<!-- FICHERO DE CONFIGURACION DE SERVICIO REST -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 13-2-2018 ****** -->
+	<!-- ****** VERSION: 1.8 ****** -->
+
+	<!-- CONTROLADOR DE LAS PETICIONES DE CLIENTES -->
+	<servlet>
+		<description>JAX-RS Tools Generated - Do not modify</description>
+		<servlet-name>JAX-RS Servlet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<!-- PARAMETRO INDICATIVO DE LOS SERVICIOS A EJECUTAR -->
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.atrium.configuracionrest.Configuracion_Rest</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- URL A ATENDER POR EL CONTROLADOR -->
+	<servlet-mapping>
+		<servlet-name>JAX-RS Servlet</servlet-name>
+		<url-pattern>/jaxrs/*</url-pattern>
+	</servlet-mapping>
+	<!-- FIN CONTROLADOR -->
+
+	<!-- ** PROCESO CARGA DEL APPLICATION CONTEXT DE SPRING (OBLIGATORIO) ** -->
+	<!-- CARGA EL APPLICATIONCONTEXT DE SPRING -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- PARAMETRO QUE INDICA EL FICHERO/OS DE SPRING -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:com/atrium/spring/modelo.xml,
+     							classpath:com/atrium/spring/servicio_web.xml</param-value>
+	</context-param>
+	<!-- ** FIN PROCESO CARGA APPLICATION CONTEXT DE SPRING (OBLIGATORIO) ** -->
+</web-app>

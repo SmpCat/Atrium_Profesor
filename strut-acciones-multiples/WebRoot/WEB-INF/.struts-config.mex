@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/usuario.do" location="50,50" dimension="235,96" />
+  <StrutsActivity path="/subir_fichero.do" location="350,50" dimension="296,96" />
+  <StrutsActivity path="/descarga.do" location="950,50" dimension="296,96" />
+  <StrutsActivity path="/eliminar.do" location="50,250" dimension="296,96" />
+  <StrutsActivity path="/jsp/prueba_accionesmultiples.jsp" location="650,250" dimension="210,51" />
+  <StrutsTransition id="/jsp/prueba_accionesmultiples.jsp,null,/eliminar.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="755,301" />
+      <AbsolutePoint location="755,316" />
+      <AbsolutePoint location="346,316" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jsp/prueba_accionesmultiples.jsp,null,/descarga.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="785,250" />
+      <AbsolutePoint location="785,98" />
+      <AbsolutePoint location="950,98" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jsp/prueba_accionesmultiples.jsp,null,/usuario.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="755,250" />
+      <AbsolutePoint location="755,191" />
+      <AbsolutePoint location="167,191" />
+      <AbsolutePoint location="167,146" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jsp/prueba_accionesmultiples.jsp,null,/subir_fichero.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,275" />
+      <AbsolutePoint location="498,275" />
+      <AbsolutePoint location="498,146" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FICHERO DE CONFIGURACION DE SPRING -->
+<!-- EJEMPLO USO DE PROPIEDADES COMPUESTAS -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 15-3-2017 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="persona1" class="com.atrium.listas.Persona">
+		<property name="nombre" value="Persona1" />
+		<property name="edad" value="28" />
+	</bean>
+
+	<bean id="persona2" class="com.atrium.listas.Persona">
+		<property name="nombre" value="Persona2" />
+		<property name="edad" value="55" />
+	</bean>
+
+	<bean id="manejador" class="com.atrium.listas.ManejadorColecciones">
+		<property name="lista">
+			<list>
+				<ref bean="persona1" />
+				<ref bean="persona2" />
+				<value>Cadena</value>
+				<value type="java.lang.Integer">5</value>
+			</list>
+		</property>
+
+		<property name="array">
+			<array>
+				<ref bean="persona2" />
+				<ref bean="persona1" />
+				<bean class="com.atrium.listas.Persona">
+					<property name="nombre" value="Persona Nueva" />
+					<property name="edad" value="10" />
+				</bean>
+			</array>
+		</property>
+
+		<property name="conjunto">
+			<set>
+				<ref bean="persona1" />
+				<ref bean="persona2" />
+				<ref bean="persona2" />
+				<ref bean="persona1" />
+			</set>
+		</property>
+
+		<property name="mapa">
+			<map>
+				<entry key="persona1" value-ref="persona1" />
+				<entry key-ref="persona2" value="otra persona" />
+				<entry key="sin persona" value="no personas" />
+				<entry key-ref="persona1" value-ref="persona2" />
+			</map>
+		</property>
+
+		<property name="propiedades">
+			<props>
+				<prop key="nombre">Juan</prop>
+				<prop key="pais">España</prop>
+				<prop key="sitio">http://atrium_formacion.com/</prop>
+				<prop key="facebook">http://grupoatrium.com</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

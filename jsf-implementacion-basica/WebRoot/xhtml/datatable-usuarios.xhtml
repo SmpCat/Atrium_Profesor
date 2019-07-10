@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!-- Pagina ejemplo de DATATABLE JSF -->
+<!-- fecha: 27-4-2017. -->
+<!-- version: 2.7-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+<h:head>
+	<!-- CARGA DE RECURSOS ESTATICOS -->
+	<h:outputStylesheet name="css/estilos_tabla.css" />
+</h:head>
+<h:body>
+	<!-- FORMULARIO CONTENEDOR DEL DATATABLE -->
+	<h:form id="formu_usuarios">
+		<h:dataTable id="tabla_usuarios"
+			value="#{usuarios_bean.lista_usuarios}" var="usuario"
+			first="#{usuarios_bean.primera_filapagina}" rows="5" frame="border"
+			rules="all" styleClass="order-table" headerClass="order-table-header"
+			footerClass="order-table-footer"
+			rowClasses="order-table-odd-row,order-table-even-row">
+			<h:column id="col_nombre">
+				<f:facet name="header">Nombre usuario</f:facet>
+				<h:outputText id="nombre_usuario" value="#{usuario.nombreUsuario}" />
+			</h:column>
+			<h:column id="col_clave">
+				<f:facet name="header">Clave</f:facet>
+				<h:outputText id="clave_usuario" value="#{usuario.password}" />
+			</h:column>
+			<h:column id="col_carpeta">
+				<f:facet name="header">Carpeta Documentacion</f:facet>
+				<f:facet name="footer">Total usuarios</f:facet>
+				<h:outputText id="carpeta_usuario"
+					value="#{usuario.carpetaDocumentacion}" />
+			</h:column>
+			<h:column id="col_idioma">
+				<f:facet name="header">Idioma seleccionado</f:facet>
+				<h:outputText id="idioma_usuario" value="#{usuario.idioma}" />
+				<f:facet name="footer">#{usuarios_bean.lista_usuarios.size()}</f:facet>
+			</h:column>
+		</h:dataTable>
+		<h:commandButton id="boton_paginacion" value="siguiente pagina"
+			actionListener="#{usuarios_bean.pagina_Tabla}" />
+	</h:form>
+</h:body>
+</html>

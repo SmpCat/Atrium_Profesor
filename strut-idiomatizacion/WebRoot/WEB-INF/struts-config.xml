@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- ****** FICHERO DE CONFIGURACION DE STRUT ****** -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 6-11-2017 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<struts-config>
+	<!-- ******** ZONA DE OBJETOS DE DOMINIO (DATOS)******** -->
+	<form-beans>
+		<form-bean name="usuario_bean" type="com.atrium.formbeans.Usuario_Bean">
+			<description>Bean obligatorio para la accion</description>
+		</form-bean>
+		<!-- BEAN DINAMICO CREADO POR STRUT -->
+		<form-bean name="idioma_bean" type="org.apache.struts.action.DynaActionForm">
+			<description>Bean dinamico para la peticion get de los hipervinculos </description>
+			<form-property name="idioma" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+
+	<!-- ******** ZONA DE ACCIONES (LOGICA DE NEGOCIO)******** -->
+	<action-mappings>
+		<!-- ******** ZONA DE ACCIONES (LOGICA/NEGOCIO)******** -->
+		<!-- GESTION DE USUARIOS -->
+		<action path="/usuario" type="com.atrium.acciones.Usuario_Accion"
+			name="usuario_bean" input="jsp/administracion.jsp" parameter="boton">
+			<description>Accion crud de la de usuarios</description>
+		</action>
+		<!-- GESTION DINAMICA DEL IDIOMA -->
+		<action path="/cambio_idioma" type="com.atrium.acciones.Cambio_Idioma"
+			name="idioma_bean" input="/jsp/administracion.jsp">
+			<description>Establecemos dinamicamente el idioma para generar las
+				paginas
+			</description>
+		</action>
+	</action-mappings>
+
+	<!-- ******** ZONA DE RECURSOS IDIOMATICOS (PROPERTIES) ******** -->
+	<message-resources parameter="com.atrium.idiomas.textos" />
+
+</struts-config>
+

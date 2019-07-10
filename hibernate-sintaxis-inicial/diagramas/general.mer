@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="master" database="MASTER" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="ARTICULOS">
+      <Drawing expanded="true" location="1783,327" dimensions="267,109" />
+      <Columns>
+        <Column name="CODIGO_ARTICULO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="DESCRIPCION_ARTICULO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="PRECIO_UNIDAD_ARTICULO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="CANTIDAD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="BANCOS">
+      <Drawing expanded="true" location="1458,287" dimensions="225,188" />
+      <Columns>
+        <Column name="CODIGO_BANCO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="NOMBRE_BANCO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="DIRECCION_BANCO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="ENTIDAD_BANCO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="4" />
+        </Column>
+        <Column name="OFICINA_BANCO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="4" />
+        </Column>
+        <Column name="DC_BANCO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="CUENTA_BANCO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="CODIGO_CLIENTE" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="CLIENTES">
+      <Drawing expanded="true" location="1079,666" dimensions="281,769" />
+      <Columns>
+        <Column name="CODIGO_CLIENTE" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="NOMBRE_CLIENTE" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="TIPO_EMPRESA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+        <Column name="CIF_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="10" />
+        </Column>
+        <Column name="NIF_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="10" />
+        </Column>
+        <Column name="NOMBRE_COMERCIAL_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="FECHA_ALTA_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="FECHA_BAJA_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="CALLE_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CIUDAD_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="CP_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="5" />
+        </Column>
+        <Column name="PROVINCIA_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="TELEFONO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="9" />
+        </Column>
+        <Column name="FAX_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="9" />
+        </Column>
+        <Column name="EMAIL_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="CONTADO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+        <Column name="CREDITO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+        <Column name="CIFRA_VENTAS_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="BENEFICIOS_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="PREPAGO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+        <Column name="CAPITAL_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="INMOVILIZADO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="PASIVO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="ACTIVO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="AÑO_BALANCE_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="LIMITE_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="PENDIENTE_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="RESTO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="CALLE_ENVIO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CIUDAD_ENVIO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="30" />
+        </Column>
+        <Column name="CP_ENVIO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="5" />
+        </Column>
+        <Column name="PROVINCIA_ENVIO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="TELEFONO_ENVIO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="9" />
+        </Column>
+        <Column name="FAX_ENVIO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="9" />
+        </Column>
+        <Column name="EMAIL_ENVIO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="OBSERVACIONES_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CLOB" size="4000" />
+        </Column>
+        <Column name="ESTADO_CLIENTE" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="FORMAS_PAGO">
+      <Drawing expanded="true" location="106,956" dimensions="278,189" />
+      <Columns>
+        <Column name="CODIGO_FORMA_PAGO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="DESCRIPCION_FORMA_PAGO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="ESTADO_FORMA_PAGO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+        <Column name="NUMERO_PAGOS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="NUMERO_DIAS_ENTRE_PAGOS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="NUMERO_DIAS_PRIMER_PAGO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="3" />
+        </Column>
+        <Column name="FECHA_ALTA_PAGO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="FECHA_BAJA_PAGO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="FORMAS_PAGO_CLIENTE">
+      <Drawing expanded="true" location="0,308" dimensions="278,147" />
+      <Columns>
+        <Column name="CODIGO_FORMA_PAGO" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="CODIGO_CLIENTE" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="ESTADO_FORMA_PAGO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+        <Column name="FECHA_ALTA_PAGO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="FECHA_BAJA_PAGO_CLIENTE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="CLAVE_FORMA_PAGO_CLIENTE" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="LINEA_PEDIDO">
+      <Drawing expanded="true" location="1201,0" dimensions="281,147" />
+      <Columns>
+        <Column name="CODIGO_LINEA_PEDIDO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="CODIGO_ARTICULO" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="NUMERO_PEDIDO" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="PRECIO_UNIDAD_ARTICULO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="NUMERO_UNIDADES_ARTICULO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="PORCENTAJE_DESCUENTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="MUNICIPIOS">
+      <Drawing expanded="true" location="250,1669" dimensions="246,88" />
+      <Columns>
+        <Column name="CODIGO_MUNICIPIO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="11" />
+        </Column>
+        <Column name="PROVINCIA" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="MUNICIPIO" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR2" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PAGO_CLIENTES">
+      <Drawing expanded="true" location="378,338" dimensions="247,87" />
+      <Columns>
+        <Column name="CODIGO_PAGO_CLIENTE" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="CODIGO_FORMA_PAGO" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="CODIGO_CLIENTE" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PAIS">
+      <Drawing expanded="true" location="0,1669" dimensions="205,129" />
+      <Columns>
+        <Column name="CODIGO_PAIS" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="11" />
+        </Column>
+        <Column name="PAIS_ISONUM" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="6" />
+        </Column>
+        <Column name="PAIS_ISO2" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+        <Column name="PAIS_ISO3" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="3" />
+        </Column>
+        <Column name="PAIS_NOMBRE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="80" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PEDIDOS">
+      <Drawing expanded="true" location="725,257" dimensions="256,248" />
+      <Columns>
+        <Column name="NUMERO_PEDIDO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="FECHA_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="PORTE_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="SEGURO_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="OTROS_CARGOS_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="TOTAL_CARGOS_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="TOTAL_BRUTO_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="PORCENTAJE_IVA_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="IVA_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="TOTAL_FACTURA_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="CODIGO_CLIENTE" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PERSONAS_CONTACTO">
+      <Drawing expanded="true" location="2150,287" dimensions="298,188" />
+      <Columns>
+        <Column name="CODIGO_PERSONACONTACTO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="CODIGO_CLIENTE" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="NOMBRE_PERSONA_CONTACTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="TELEFONO_PERSONA_CONTACTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="9" />
+        </Column>
+        <Column name="EXTENSION_PERSONA_CONTACTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="6" />
+        </Column>
+        <Column name="CARGO_PERSONA_CONTACTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="HORARIO_PERSONA_CONTACTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="20" />
+        </Column>
+        <Column name="EMAIL_PERSONA_CONTACTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PROVEEDORES">
+      <Drawing expanded="true" location="2880,247" dimensions="301,269" />
+      <Columns>
+        <Column name="CODIGO_PROVEEDOR" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="11" />
+        </Column>
+        <Column name="NOMBRE_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="CIF_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="10" />
+        </Column>
+        <Column name="NOMBRE_COMERCIAL_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CALLE_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CIUDAD_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="CP_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="PROVINCIA_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="35" />
+        </Column>
+        <Column name="TELEFONO_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="9" />
+        </Column>
+        <Column name="FAX_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="9" />
+        </Column>
+        <Column name="EMAIL_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="OBSERVACIONES_PROVEEDOR" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CLOB" size="4000" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PROVEEDORES_ARTICULOS">
+      <Drawing expanded="true" location="2386,39" dimensions="222,68" />
+      <Columns>
+        <Column name="CODIGO_PROVEEDOR" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="11" />
+        </Column>
+        <Column name="CODIGO_ARTICULO" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="20" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="PROVINCIAS">
+      <Drawing expanded="true" location="541,1669" dimensions="246,69" />
+      <Columns>
+        <Column name="CODIGO_PROVINCIA" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="PROVINCIA" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR2" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="ROLES">
+      <Drawing expanded="true" location="2665,1545" dimensions="228,69" />
+      <Columns>
+        <Column name="CODIGO_ROL" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="DESCRIPCION_ROL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="100" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="ROLES_TAREAS">
+      <Drawing expanded="true" location="2994,1016" dimensions="196,68" />
+      <Columns>
+        <Column name="CODIGO_ROL" primary_key="true" foreign_key="true" required="true" unique="true">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="CODIGO_TAREA" primary_key="true" foreign_key="true" required="true" unique="true">
+          <Data type="NUMBER" size="2" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="TAREAS">
+      <Drawing expanded="true" location="3017,1535" dimensions="247,89" />
+      <Columns>
+        <Column name="CODIGO_TAREA" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="DESCRIPCION_TAREA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="2000" />
+        </Column>
+        <Column name="VINCULO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="50" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="USUARIOS">
+      <Drawing expanded="true" location="2585,966" dimensions="274,168" />
+      <Columns>
+        <Column name="NOMBRE_USUARIO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR2" size="20" />
+        </Column>
+        <Column name="PASSWORD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="10" />
+        </Column>
+        <Column name="CODIGO_ROL" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="2" />
+        </Column>
+        <Column name="FECHA_ALTA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="FECHA_BAJA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="CARPETA_DOCUMENTACION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="250" />
+        </Column>
+        <Column name="IDIOMA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="USUARIOS_CLIENTES">
+      <Drawing expanded="true" location="2548,347" dimensions="232,68" />
+      <Columns>
+        <Column name="NOMBRE_USUARIO" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR2" size="20" />
+        </Column>
+        <Column name="CODIGO_CLIENTE" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="VENCIMIENTOS">
+      <Drawing expanded="true" location="1081,287" dimensions="277,188" />
+      <Columns>
+        <Column name="CODIGO_VENCIMIENTO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="FECHA_VENCIMIENTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="CANTIDAD_VENCIMIENTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+        <Column name="NUMERO_PEDIDO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+        <Column name="FECHA_COBRO_VENCIMIENTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="NOMBRE_BANCO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="40" />
+        </Column>
+        <Column name="ESTADO_VENCIMIENTO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+        <Column name="CODIGO_CLIENTE" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="NUMBER" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="BANCOS_COD_CLI_PK">
+      <Details primary_table="CLIENTES" foreign_table="BANCOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FORMA_PC_CODIFO_FORMA_PAGO_FK">
+      <Details primary_table="FORMAS_PAGO" foreign_table="FORMAS_PAGO_CLIENTE">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_FORMA_PAGO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_FORMA_PAGO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FORMA_PC_CODIGO_CLIENTE_FK">
+      <Details primary_table="CLIENTES" foreign_table="FORMAS_PAGO_CLIENTE">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="LINEA_PEDIDO_NUM_PED_FK">
+      <Details primary_table="PEDIDOS" foreign_table="LINEA_PEDIDO">
+        <PrimaryKeys>
+          <ColumnName name="NUMERO_PEDIDO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="NUMERO_PEDIDO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="LINEA_PEDIDO_COD_ART_FK">
+      <Details primary_table="ARTICULOS" foreign_table="LINEA_PEDIDO">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_ARTICULO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_ARTICULO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="PAGO_CLIENTES_COD_CLI_FK">
+      <Details primary_table="CLIENTES" foreign_table="PAGO_CLIENTES">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="PAGO_CLIENTES_COD_FP_FK">
+      <Details primary_table="FORMAS_PAGO" foreign_table="PAGO_CLIENTES">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_FORMA_PAGO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_FORMA_PAGO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="PEDIDOS_COD_CLI_FK">
+      <Details primary_table="CLIENTES" foreign_table="PEDIDOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="PERSONAS_CONTAC_COD_CLI_FK">
+      <Details primary_table="CLIENTES" foreign_table="PERSONAS_CONTACTO">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="PROV_ART_COD_PROV_FK">
+      <Details primary_table="PROVEEDORES" foreign_table="PROVEEDORES_ARTICULOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_PROVEEDOR" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_PROVEEDOR" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="PROV_ART_COD_ART_FK">
+      <Details primary_table="ARTICULOS" foreign_table="PROVEEDORES_ARTICULOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_ARTICULO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_ARTICULO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="CODIGO_ROL_FK">
+      <Details primary_table="ROLES" foreign_table="ROLES_TAREAS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_ROL" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_ROL" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="CODIGO_TAREA_FK">
+      <Details primary_table="TAREAS" foreign_table="ROLES_TAREAS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_TAREA" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_TAREA" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="CODIGO_ROL_USUARIOS_FK">
+      <Details primary_table="ROLES" foreign_table="USUARIOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_ROL" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_ROL" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="NOMBRE_USUARIO_FK">
+      <Details primary_table="USUARIOS" foreign_table="USUARIOS_CLIENTES">
+        <PrimaryKeys>
+          <ColumnName name="NOMBRE_USUARIO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="NOMBRE_USUARIO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="CODIGO_CLIENTE_FK">
+      <Details primary_table="CLIENTES" foreign_table="USUARIOS_CLIENTES">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="VENCIMIENTOS_COD_CLI_PK">
+      <Details primary_table="CLIENTES" foreign_table="VENCIMIENTOS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_CLIENTE" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

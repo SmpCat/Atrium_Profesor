@@ -1,0 +1,43 @@
+
+/* EJEMPLOS DE FUENTES A APLICAR*/
+
+#selector{
+	/* OPCIONES DE FUENTES DE LETRAS */
+	font-family: fuente a usar;
+	font-size: tamaño de fuente;
+	font-weight: ancho de la letra;
+	font-style: italica;
+	font-stretch: tipo de condensado de letra;
+	font-variant: small-caps;
+	
+	/* OPCIONES DE ESPACIADO */
+	word-spacing: espaciado entre palabras;
+	white-space: espaciados/gestion de espacios en blanco;
+	letter-spacing: espaciado entre caracteres;
+	
+	/* OPCIONES DE TEXTO*/
+	text-align: tipo de alineacion;
+	text-decoration: tipo resalte de texto;
+	text-shadow: tipo de sombreado;
+	text-transform: tipo de caracteres de texto;
+	text-indent: 10px;
+	direction: rtl; /* ESCRITURA DE TEXTO DE DERECHA A IZQUIERDA */
+	
+}
+
+/* TIPO SERIF */
+Georgia, serif;
+"Palatino Linotype", "Book Antiqua", Palatino, serif;
+"Times New Roman", Times, serif;
+/*  TIPO SANS-SERIF */
+Arial, Helvetica, sans-serif;
+"Arial Black", Gadget, sans-serif;
+"Comic Sans MS", cursive, sans-serif;
+Impact, Charcoal, sans-serif;
+"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+Tahoma, Geneva, sans-serif;
+"Trebuchet MS", Helvetica, sans-serif;
+Verdana, Geneva, sans-serif;
+/* TIPO MONOSPACE */
+"Courier New", Courier, monospace;
+"Lucida Console", Monaco, monospace

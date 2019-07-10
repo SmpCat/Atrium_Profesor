@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14932077424030" configfile="/jsf-sintaxis-inicial/WebRoot/WEB-INF/faces-config.muestra.xml">
+  <nodes xsi:type="pageflow:PFPage" name="RUTA Y EL NOMBRE DE LA VISTA/XHTML" id="pf14932094619784" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14932094619785" path="RUTA Y EL NOMBRE DE LA VISTA/XHTML"/>
+  <nodes xsi:type="pageflow:PFPage" name="RUTA Y NOBRE DE LA VISTA/XHMTL" id="pf14932094619786" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14932094619785" path="RUTA Y NOBRE DE LA VISTA/XHMTL"/>
+  <links id="pf14932094619785" target="pf14932094619786" source="pf14932094619784" outcome="TEXTO IDENTIFICADOR"/>
+</pageflow:Pageflow>

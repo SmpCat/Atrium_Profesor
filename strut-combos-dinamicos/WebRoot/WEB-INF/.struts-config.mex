@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/listas_accion.do" location="650,450" dimension="224,96" />
+  <StrutsActivity path="/jsp/ejemplo_listas.jsp" location="50,150" dimension="147,51" />
+  <StrutsActivity path="/jsp/contenidos/definicion_contenido_menu_xml.jsp" location="50,650" dimension="309,51" />
+  <StrutsActivity path="/jsp/salida.jsp" location="650,650" dimension="103,51" />
+  <StrutsActivity path="/jsp/ejemplos/ejemplo_listas.jsp" location="950,650" dimension="200,51" />
+  <StrutsTransition id="/jsp/ejemplo_listas.jsp,null,/listas_accion.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="197,175" />
+      <AbsolutePoint location="762,175" />
+      <AbsolutePoint location="762,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

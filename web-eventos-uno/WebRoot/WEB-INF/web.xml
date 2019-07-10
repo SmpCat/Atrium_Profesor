@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB EVENTOS -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 16-11-2016 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- DEFINICION DE ESCUCHADORES DE EVENTOS QUE SERAN USADOS POR EL SERVIDOR -->
+	<listener>
+		<description>Tratamiento de eventos de aplicacion</description>
+		<listener-class>com.atrium.eventos.Eventos_ServletContext</listener-class>
+	</listener>
+	<listener>
+		<description>Tratamiento de eventos de sesion</description>
+		<listener-class>com.atrium.eventos.Eventos_Sesion</listener-class>
+	</listener>
+	<listener>
+		<description>Tratamiento de eventos de peticion</description>
+		<listener-class>com.atrium.eventos.Eventos_Peticion</listener-class>
+	</listener>
+
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+</web-app>

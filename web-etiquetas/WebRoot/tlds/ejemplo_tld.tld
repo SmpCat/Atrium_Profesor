@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<!-- VERSION DE LA LIBRERIA -->
+	<tlib-version>1.0</tlib-version>
+	<!-- VERSION DE JSP PARA EL QUE ESTAN ECHAS -->
+	<jsp-version>1.2</jsp-version>
+	<!-- ALIAS DEL TLD -->
+	<short-name>prueba TLD</short-name>
+	<!-- LOCALIZADOR DEL TLD -->
+	<uri>cadena identificativa</uri>
+
+	<!-- DEFINICION DE LA ETIQUETA -->
+	<tag>
+		<!-- NOMBRE -->
+		<name>nombre etiqueta</name>
+		<!-- CLASE -->
+		<tag-class>ruta y nombre de la clase</tag-class>
+		<!-- CUERPO DE LA ETIQUETA -->
+		<body-content>tagdependent</body-content>
+		<!-- DEFINICION DE ATRIBUTO -->
+		<attribute>
+			<!-- NOMBRE ATRIBUTO -->
+			<name>nombre de atributo</name>
+			<!-- OBLIGACION DEL ATRIBUTO -->
+			<required>true/false</required>
+			<!-- VALOR MEDIANTE EXPRESION DINAMICA -->
+			<rtexprvalue>true/false</rtexprvalue>
+		</attribute>
+	</tag>
+
+</taglib>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE RECETA [
+        <!ELEMENT TITULO (#PCDATA)>
+        <!ELEMENT GENERAL EMPTY>
+        <!ELEMENT INGREDIENTES (INGREDIENTE*) >
+        <!ELEMENT PROCEDIMIENTO (#PCDATA)>
+        <!ELEMENT INGREDIENTE EMPTY >        
+        <!ATTLIST GENERAL
+                COCINA CDATA #REQUIRED
+                DIFICULTAD (facil | media | alta) #REQUIRED
+                TIPO (sopas | carnes | verduras | salsa | guarnición) #REQUIRED
+        >
+        <!ATTLIST INGREDIENTE
+                NOMBRE CDATA #REQUIRED
+                CANTIDAD CDATA #REQUIRED
+                UNIDAD CDATA #REQUIRED
+        >
+]>
+<RECETA>
+        <TITULO>Berenjenas al Im n</TITULO>
+        <GENERAL TIPO="segundo plato" CLASE="" COCINA="bizantina" PROCEDENCIA="El Mundo. El Reportaje de la Historia. Sabado 1 de julio de 2000." />
+        <INGREDIENTES COMENSALES="0">
+                <INGREDIENTE NOMBRE="berenjenas peque¤as" CANTIDAD="" UNIDAD="" PRINCIPAL="si"/>
+                <INGREDIENTE NOMBRE="aceite" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="cebollas" CANTIDAD="1" UNIDAD="pieza" />
+                <INGREDIENTE NOMBRE="dientes de ajo" CANTIDAD="2" UNIDAD="pieza" />
+                <INGREDIENTE NOMBRE="tomates" CANTIDAD="2" UNIDAD="pieza" />
+                <INGREDIENTE NOMBRE="sal" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="pimienta" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="tomillo" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="perejil" CANTIDAD="" UNIDAD="" />
+                <INGREDIENTE NOMBRE="mantequilla" CANTIDAD="1" UNIDAD="cucharadita" />
+                <INGREDIENTE NOMBRE="agua" CANTIDAD="" UNIDAD="" />
+        </INGREDIENTES>
+        <PROCEDIMIENTO>
+                Se lavan las berenjenas y se pelan en bandas longitudinales. Las peladuras, de un cent¡metro de ancho, deben alternarse con la pulpa, tambi‚n de un centr¡metro de grosor. Hacemos en las berenjenas una incisi¢n lateral a trav‚s de la cual se extraer , con ayuda de una cucharilla, un cuarto de su pulpa. Se doran las berenjenas en aceite caliente durente 3 minutos y se retiran. En el mismo aceite se rehogan la cebollas y los ajos picados. Se a¤aden los tomates, pelados y troceados, la pulpa de las berenjenas, el perejil y tomillo. Salpimentar y cocer durante 15 minutos. Se rellenan las berenjenas con esta mezcla y se disponen en una fuente, con el lado relleno hacia arriba y cubiertas con un poco de mantequilla y agua. Se hornea durante 20 minutos y listo para servir.
+        </PROCEDIMIENTO>
+</RECETA>

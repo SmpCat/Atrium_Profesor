@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- FICHERO DE CONFIGURACION DE HIBERNATE EVENTOS ** EJEMPLO NO FUNCIONAL -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 15-1-2018 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- ***** SEGURIDAD DE HIBERNATE VIA TRATAMIENTO DE EVENTOS PARA HABILITAR 
+			EL USO DE AUTORIZACIONES JAAS. ***** -->
+		<!-- <listener type="pre-delete" class="org.hibernate.secure.JACCPreDeleteEventListener" 
+			/> <listener type="pre-update" class="org.hibernate.secure.JACCPreUpdateEventListener" 
+			/> <listener type="pre-insert" class="org.hibernate.secure.JACCPreInsertEventListener" 
+			/> <listener type="pre-load" class="org.hibernate.secure.JACCPreLoadEventListener" 
+			/> -->
+
+		<!-- ***** DEFINICION DE ROLES Y PERMISOS ***** -->
+		<grant role="admin" entity-name="User" actions="insert,update,read" />
+		<grant role="su" entity-name="User" actions="*" />
+
+
+
+	</session-factory>
+</hibernate-configuration>

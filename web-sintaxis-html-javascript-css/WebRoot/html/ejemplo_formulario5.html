@@ -1,0 +1,96 @@
+<!-- Pagina de ejemplo HTML5 formulario -->
+<!-- fecha: 10-1-2018. -->
+<!-- version: 2.7-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>ejemplo_formulario5.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=ISO-8859-1">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+</head>
+
+<body>
+	<!-- FORMULARIO CON LOS TYPE NUEVOS DE HTML5 -->
+	<form action="">
+		<table>
+			<!-- ELEMENTOS DE FECHA/HORA -->
+			<tr>
+				<td>Introduccion de fecha</td>
+				<td><input type="date" name="bday"></td>
+			</tr>
+			<tr>
+				<td>Fecha con limite maximo</td>
+				<td><input type="date" name="bday" max="1979-12-31"><br>
+			</tr>
+			<tr>
+				<td>Fecha con limite minimo 2000-01-01:</td>
+				<td><input type="date" name="bday" min="2000-01-02"></td>
+			</tr>
+			<tr>
+				<td>Fecha con formato local</td>
+				<td><input type="datetime-local" name="bdaytime"></td>
+			</tr>
+			<tr>
+				<td>Seleccion de mes del año</td>
+				<td><input type="month" name="bdaymonth"></td>
+			</tr>
+			<tr>
+				<td>Seleccion de horas</td>
+				<td><input type="time" name="usr_time"></td>
+			</tr>
+			<tr>
+				<td>Seleccion de semanas</td>
+				<td><input type="week" name="week_year"></td>
+			</tr>
+			<!-- ELEMENTOS ADICIONALES -->
+			<tr>
+				<td>Seleccion de color</td>
+				<td><input type="color" name="favcolor"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>Valor numerico</td>
+				<td><input type="number" name="quantity" min="1" max="5" ></td>
+			</tr>
+			<tr>
+				<td>Valor entre rangos</td>
+				<td><input type="range" name="points" min="0" max="10"></td>
+			</tr>
+			<tr>
+				<td>Definicion de campos de busqueda</td>
+				<td><input type="search" name="googlesearch"></td>
+			</tr>
+			<tr>
+				<td>Numero de telefono</td>
+				<td><input type="tel" name="usrtel"></td>
+			</tr>
+			<tr>
+				<td>Indicacion de URL</td>
+				<td><input type="url" name="homepage"></td>
+			</tr>
+			<tr>
+				<td>Elemento de seleccion</td>
+				<td>
+					<!-- OPCIONES DE SELECCION --> <input list="browsers"> <datalist
+						id="browsers">
+						<option value="Internet Explorer">
+						<option value="Firefox">
+						<option value="Chrome">
+						<option value="Opera">
+						<option value="Safari">
+					</datalist>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

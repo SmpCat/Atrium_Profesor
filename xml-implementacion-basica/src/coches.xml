@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE remesa-coches SYSTEM "remesa-coches.dtd" >
+<remesa-coches>
+	<cantidad>25</cantidad>
+	<dia-embarque>12-11-2008</dia-embarque>
+	<coche segundamano="si">
+		<marca>chevrolet</marca>
+		<modelo>kalos</modelo>
+		<precio>12000</precio>
+		<kilometros>0</kilometros>
+		<fecha-matriculacion>0</fecha-matriculacion>
+	</coche>
+	<coche>
+		<marca>mercedes</marca>
+		<modelo>350</modelo>
+		<precio>35000</precio>
+		<kilometros>10000</kilometros>
+		<fecha-matriculacion>1-5-2008</fecha-matriculacion>
+	</coche>
+	<coche>
+		<marca>seat</marca>
+		<modelo>toledo</modelo>
+		<precio>12900</precio>
+		<kilometros>0</kilometros>
+		<fecha-matriculacion>0</fecha-matriculacion>
+	</coche>
+</remesa-coches>

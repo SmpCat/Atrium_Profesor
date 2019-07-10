@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <listener>
+    <description>Tratamos la carga de los parametros propios de configuracion</description>
+    <listener-class>com.atrium.eventos.arranque.Evento_ArranquePrograma</listener-class>
+  </listener>
+  <listener>
+    <description>Escuchador de Aplicacion atributos/creacion-destruccion</description>
+    <listener-class>com.atrium.eventos.Rastreo_Aplicacion</listener-class>
+  </listener>
+  <listener>
+    <description>Escuchador eventos de Sesion atributos/creacion-destruccion/activacion</description>
+    <listener-class>com.atrium.eventos.Rastreo_Sesiones</listener-class>
+  </listener>
+  <listener>
+    <description>Escuchador de Peticiones atributos/creacion-destruccion</description>
+    <listener-class>com.atrium.eventos.Rastreo_Peticiones</listener-class>
+  </listener>
+  <context-param>
+    <description>establece la ruta de la bitacora en depuracion que registra las operacion y su
+		seguimiento</description>
+    <param-name>ruta_seguimiento</param-name>
+    <param-value>/directorio_logs/seguimiento</param-value>
+  </context-param>
+  <context-param>
+    <description>establece la ruta del fichero de configuracion del log4j</description>
+    <param-name>ruta_log4j</param-name>
+    <param-value>/com/atrium/log4j</param-value>
+  </context-param>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

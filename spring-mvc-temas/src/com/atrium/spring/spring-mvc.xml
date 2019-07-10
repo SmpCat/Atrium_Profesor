@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FICHERO DE CONFIGURACION DE SPRING -->
+<!-- EJEMPLO DEFINICION MVC PARA IDIOMATIZACION -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 10-11-2017 ****** -->
+<!-- ****** VERSION: 2.0. ****** -->
+
+<beans default-autowire="byName" default-lazy-init="true"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- RESOLUTOR DE VISTAS -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<context:component-scan base-package="com.atrium.controller" />
+
+	<!-- ****** TRATAMIENTO DE TEMAS ****** -->
+	<!-- ** DEFINICION DEL GESTOR DE TRATAMIENTO DE LOS RECURSOS DEL TEMA ** -->
+	<bean id="themeSource"
+		class="org.springframework.ui.context.support.ResourceBundleThemeSource" />
+	<!-- ** DEFINICION DEL OBJETO PROPIO QUE INDICA LOS FICHEROS PROPERTIES 
+		A LEER ** -->
+	<!-- EXISTEN OTRAS IMPLEMENTACIONES DE THEME RESOLVER (COMO LOS LOCALES 
+		POR SESION,FIJO O COOKIE) -->
+	<bean id="themeResolver" class="com.atrium.temas.Resolutor_TemasSpring">
+		<!-- <property name="defaultThemeName" value="tema_explorer11" /> -->
+	</bean>
+	<!-- INTERCEPTOR PARA DOTAR DE LA POSIBILIDAD DE CAMBIAR DINAMICAMENTE EN 
+		EL TEMA -->
+	<bean id="themeChangeInterceptor"
+		class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+		<property name="paramName" value="tema" />
+	</bean>
+	<!-- ****** FIN TRATAMIENTO DE TEMAS ****** -->
+
+	<!-- ***** OPCIONES DE THEMERESOLVER ***** -->
+	<!-- TEMA FIJO, SE USA PARAMETRO PQRA INDICARLO -->
+	<!--<bean id="themeResolver" class="org.springframework.web.servlet.theme.FixedThemeResolver"> -->
+	<!-- <property name="defaultThemeName" value="" /> -->
+	<!--</bean> -->
+	<!-- SE MANTIENE EL TEMA EN EL CLIENTE COMO UNA COOKIE -->
+	<!--<bean id="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver" 
+		/> -->
+	<!-- SE MANTIENE EL TEMA COMO PARAMETRO EN CADA SESION DE USUARIO -->
+	<!--<bean id="themeResolver" class="org.springframework.web.servlet.theme.SessionThemeResolver" 
+		/> -->
+
+</beans>

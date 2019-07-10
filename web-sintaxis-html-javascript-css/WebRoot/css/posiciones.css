@@ -1,0 +1,46 @@
+/* EJEMPLOS DE POSICIONAMIENTO DE DIV */
+#selector {
+	/* TIPO POSICIONAMIENTO */
+	position: absolute;
+	/* POSICION EN LA PAGINA*/
+	top: 100px;
+	bottom: 50%;
+	left:;
+	right:;
+	/* TAMAÑO (ANCHO - ALTO) */
+	width: 72px;
+	height: 23%;
+	/* RESOLUCION DE SOLAPES */
+	z-index: 500;
+	/* BARRA DE SCROLL */
+	overflow: visible;
+	/* VISIBILIDAD DE LA CAPA */
+	visibility: visible- hidden;
+	/* BORDES DE LAS CAPAS */
+	/* LOS CUATROS BORDES A LA VEZ*/
+	border-color:;
+	border-width:;
+	border-style:;
+	border:;
+	/* CADA BORDE POR SEPARADO*/
+	border-bottom-color:;
+	border-bottom-style:;
+	border-bottom-width:;
+	border-bottom:;
+	/* MARGEN EXTERNO DE LA CAPA */
+	/* LOS CUATRO MARGENES A LA VEZ */
+	margin: 0px;
+	/* CADA MARGEN POR SEPARADO*/
+	margin-bottom:;
+	margin-left:;
+	margin-right:;
+	margin-top:;
+	/* MARGEN INTERNO DE LA CAPA */
+	/* LOS CUATRO MARGENES A LA VEZ */
+	padding: 0px;
+	/* CADA MARGEN POR SEPARADO*/
+	padding-bottom:;
+	padding-left:;
+	padding-right:;
+	padding-top:;
+}

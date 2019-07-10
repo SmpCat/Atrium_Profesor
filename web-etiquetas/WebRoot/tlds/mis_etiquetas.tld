@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>ghgh</short-name>
+	<uri>http://com.atrium.jsg</uri>
+
+	<!-- ETIQUETAS PARA CREAR LA RUTA DE LA APLICACION -->
+	<tag>
+		<name>ruta_servidor</name>
+		<tag-class>com.atrium.etiquetas.Ruta_DinamicaAplicacion</tag-class>
+		<body-content>tagdependent</body-content>
+		<description>Generacion dinamica de la ruta del servidor para las
+			peticiones de recursos estaticos via navegador</description>
+	</tag>
+
+	<tag>
+		<name>ruta-parametro</name>
+		<tag-class>com.atrium.etiquetas.Ruta_DinamicaAplicacionParametro</tag-class>
+		<body-content>tagdependent</body-content>
+		<description>Generacion dinamica de la ruta de la aplicacion con la
+			ayuda de un parametro</description>
+		<attribute>
+			<name>contexto_peticion</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Atributo para pasar a la etiqueta el contexto de sesion.</description>
+		</attribute>
+	</tag>
+	<!-- ETIQUETAS PARA CREAR LA RUTA DE LA APLICACION -->
+
+	<!-- ETIQUETA PARA EL MENU DINAMICO -->
+	<tag>
+		<name>menu_personalizado</name>
+		<tag-class>com.atrium.etiquetas.Menu_Personalizado</tag-class>
+		<body-content>tagdependent</body-content>
+		<description>GENERA DE FORMA DINAMICA EL MENU PROPIO DE CADA USUARIO
+		</description>
+		<attribute>
+			<name>sentido</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>INDICA COMO SE ORDENARA LAS OPCIONES DEL MENU, TRUE
+				ASCENDENTE FALSE DESCENDENTE</description>
+		</attribute>
+	</tag>
+
+	<!-- FORMULARIO CRUD DE USUARIOS -->
+	<tag>
+		<name>lista_roles</name>
+		<tag-class>com.atrium.etiquetas.Listas_Roles</tag-class>
+		<body-content>tagdependent</body-content>
+		<description>CREARA DE FORMA DINAMICA EL CONTENIDO DE LA LISTA CON LOS
+			ROLES ACTIVOS DE LA BD.</description>
+	</tag>
+
+</taglib>

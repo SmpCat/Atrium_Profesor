@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FICHERO DE CONFIGURACION DE SPRING -->
+<!-- EJEMPLO DEFINICION MVC PARA IDIOMATIZACION -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 10-11-2017 ****** -->
+<!-- ****** VERSION: 2.0. ****** -->
+
+<beans default-autowire="byName" default-lazy-init="true"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- RESOLUTOR DE VISTAS -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<context:component-scan base-package="com.atrium.controller" />
+
+	<!-- **** RECURSOS ADICIONALES PARA LA IDIOMATIZACION DE LA APLICACION **** -->
+	<!-- DECLARACION DE RECURSOS IDIOMATICOS PARA ENTORNOS DINAMICOS DE WEB -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:com/atrium/idiomas/textos" />
+	</bean>
+	<!-- GESTOR DE IDIOMAS POR SESION -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
+		lazy-init="false">
+		<!-- SIN EL IDIOMA POR DEFECTO PONE EL PREFERIDO DE LA CABECERA DE LA PETICION -->
+		<!-- <property name="defaultLocale" value="es" /> -->
+	</bean>
+	<!-- OBJETO QUE NOS PERMITIRA CAMBIAR EL IDIOMA DE DINAMICAMENTE POR CODIGO -->
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="language" />
+	</bean>
+	<!-- * FIN RECURSOS ADICIONALES PARA LA IDIOMATIZACION DE APLICACION * -->
+
+	<!-- ***** OTRAS OPCIONES DE GESTION DE LOCALES ***** -->
+	<!-- //PARAMETRO DE LA CABECERA -->
+	<!-- <bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver"/> -->
+	<!--// COOKIES DE NAVEGADOR -->
+	<!--<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/> -->
+	<!--// LOCALE FIJO PARA TODO LOS USUARIOS -->
+	<!--<bean id="localeResolver" class="org.springframework.web.servlet.i18n.FixedLocaleResolver"/> -->
+
+	<!-- DECLARACION DE RECURSOS IDIOMATICOS PARA ENTORNOS NO WEB NO INTERVIEN 
+		EN LA APLICACION PARA NADA, SOLO A EFECTOS DOCUMENTATIVOS -->
+	<!--<bean id="messageSource" -->
+	<!--class="org.springframework.context.support.ResourceBundleMessageSource"> -->
+	<!-- <property name="basenames"> -->
+	<!-- <list> -->
+	<!-- ASUME LOS FICHEROS EN FUNCION DEL ORDEN DE LA COLECCION -->
+	<!-- <value>/com/atrium/idiomas/textos_es</value> -->
+	<!-- <value>/com/atrium/idiomas/textos_en</value> -->
+	<!-- <value>/com/atrium/idiomas/textos_fr</value> -->
+	<!-- </list> -->
+	<!-- </property> -->
+	<!--</bean> -->
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE RECETA SYSTEM "recetas.dtd">
+<RECETA>
+        <TITULO>Crema de puerros</TITULO>
+        <GENERAL COCINA="española" DIFICULTAD="fácil" TIPO="sopas" />
+        <INGREDIENTES>
+                <INGREDIENTE NOMBRE="puerros" CANTIDAD="2500" UNIDAD="gramo" />
+                <INGREDIENTE NOMBRE="patatas" CANTIDAD="3" UNIDAD="pieza" />
+                <INGREDIENTE NOMBRE="arroz" CANTIDAD="3" UNIDAD="cucharada" />
+                <INGREDIENTE NOMBRE="pechuga de pollo" CANTIDAD="250" UNIDAD="gramo"  />
+                <INGREDIENTE NOMBRE="mantequilla" CANTIDAD="1" UNIDAD="cucharada" />
+                <INGREDIENTE NOMBRE="nata líquida" CANTIDAD="500" UNIDAD="gramo" />
+                <INGREDIENTE NOMBRE="pimienta molida" CANTIDAD="" UNIDAD=""/>
+                <INGREDIENTE NOMBRE="nuez moscada" CANTIDAD="" UNIDAD=""/>
+        </INGREDIENTES>
+        <PROCEDIMIENTO>
+	Hervir ½ hora en la olla los puerros, las patatas, el arroz y el pollo.
+	Añadir una cucharada de mantequilla, pasarlo por la batidora y colarlo.
+	Añadir pimienta molida y nuez moscada rallada al gusto, mezclar nata líquida 1 caja, dejando un poco para adornar las tazas al servir junto con un poco de la pechuga muy menudita.
+        </PROCEDIMIENTO>
+</RECETA>
+
+
+

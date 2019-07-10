@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- ****** FICHERO DE CONFIGURACION DE STRUT ****** -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 12-12-2016 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<struts-config>
+	<!-- ******** ZONA DE OBJETOS DE DOMINIO (DATOS)******** -->
+	<form-beans>
+		<form-bean name="login_bean" type="com.atrium.formbean.Login_Bean" />
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+	<!-- ******** ZONA DE ACCIONES ******** -->
+	<action-mappings>
+		<action path="/login_accion" type="com.atrium.acciones.Login_Accion"
+			name="login_bean" input="/jsp/login.jsp">
+			<forward name="correcto" path="/jsp/menu.jsp" />
+			<forward name="incorrecto" path="/jsp/login.jsp" />
+		</action>
+	</action-mappings>
+	<!-- ******** ZONA RECURSOS IDIOMATICOS ******** -->
+	<message-resources parameter="com.atrium.idiomas.textos_es" />
+</struts-config>
+

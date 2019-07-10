@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<!-- ****** FICHERO DE CONFIGURACION DE JSF ****** -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 27-4-2017 ****** -->
+	<!-- ****** VERSION: 1.6 ****** -->
+	
+<!-- ***** ZONA DE CONVERSORES/VALIDADORES ***** -->
+	<validator>
+		<description>COMPROBACION DE QUE LA SEGUNDA FECHA SEA MAYOR O IGUAL QUE LA PRIMERA</description>
+		<validator-id>validar_rangofechas</validator-id>
+		<validator-class>com.atrium.validadores.Validar_RangoFechas</validator-class>
+	</validator>
+	<converter>
+		<description>CONVERSION A OBJETOS DE TIPO ROL</description>
+		<converter-id>convertir_rol</converter-id>
+		<converter-class>com.atrium.conversores.Convertir_Rol</converter-class>
+	</converter>
+	<!-- ***** FIN ZONA DE CONVERSORES/VALIDADORES ***** -->
+
+
+	<!-- *** MODIFICACION DE PARAMETROS DE FUNCIONAMIENTO DE JSF *** -->
+	<application>
+		<!-- CAMBIAMOS EL CONSTRUCTOR DE MANAGEDBEANS POR APPLICATIONCONTEXT DE 
+			SPRING PARA PODER INYECTAR PROPIEDADES DESDE SPRING -->
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
+
+</faces-config>

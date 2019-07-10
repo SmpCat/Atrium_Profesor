@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!-- Pagina ejemplo de conversores/validadores de JSF -->
+<!-- fecha: 20-4-2017. -->
+<!-- version: 2.7-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+<h:head>
+	<title>JSF 2.2 Page</title>
+	<meta name="keywords" content="enter,your,keywords,here" />
+	<meta name="description" content="A short description of this page." />
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+	<!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+</h:head>
+<h:body>
+	<h:form id="formu_conversionvalidacion">
+		<h:panelGrid id="panel" columns="2">
+			<h:outputText id="" value="" />
+			<h:inputText id="">
+				<!-- CONVERSORES DE JSF -->
+				<f:convertNumber maxIntegerDigits="" type=""/>
+				<f:convertDateTime pattern=""  type=""/>
+				<!-- CONVERSOR PERSONALIZADO -->
+				<f:converter converterId="nombre/identificador"/>
+			</h:inputText>
+			<h:outputText id="" value="" />
+			<h:inputText id="" required="true">
+				<!-- VALIDACION DE CADENAS -->
+				<f:validateLength maximum="" minimum="" />
+				<!-- VALIDACIONES DE VALORES NUMERICOS -->
+				<f:validateLongRange maximum="" minimum="" />
+				<f:validateDoubleRange />
+				<!-- OPCIONES SOLO DE LA VERSION 2.X -->
+				<f:validateRequired />
+				<f:validateRegex pattern="" />
+				<!-- VALIDACIONES PERSONALIZADOS -->
+				<f:validator validatorId="nombre/identificador"/>
+			</h:inputText>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

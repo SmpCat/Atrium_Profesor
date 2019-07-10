@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FICHERO DE CONFIGURACION DE SPRING -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 14-11-2016 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<beans default-lazy-init="true" default-autowire="byName"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<!-- OPCION DE CONSTRUCTOR SIN ARGUMENTOS -->
+	<bean id="saludo1" class="com.atrium.controlador.Saludo" />
+
+	<!-- OPCION DE INYECCION DE DEPENDENCIAS -->
+	<bean id="saludo2" class="com.atrium.controlador.Saludo">
+		<property name="texto" value="Soy la inyeccion de dependencias" />
+	</bean>
+
+	<!-- OPCION DE CONSTRUCTOR CON ARGUMENTOS -->
+	<bean id="saludo3" class="com.atrium.controlador.Saludo">
+		<constructor-arg index="0"
+			value="Soy el argumento del constructor" />
+	</bean>
+
+	<!-- OPCION DE CONSTRUCTOR CON DOS ARGUMENTOS -->
+	<bean id="saludo31" class="com.atrium.controlador.Saludo">
+		<constructor-arg index="0"
+			value="Soy el argumento del constructor" />
+		<constructor-arg type="com.atrium.controlador.Saludo"
+			ref="saludo1" />
+	</bean>
+
+	<!-- OPCION DE METODO DE INSTANCIA SIN ARGUMENTOS -->
+	<bean id="saludo4" class="com.atrium.controlador.Saludo"
+		factory-method="metodo_Instancia" />
+
+	<!-- OPCION DE METODO DE INSTANCIA CON ARGUMENTOS -->
+	<bean id="saludo5" class="com.atrium.controlador.Saludo"
+		factory-method="metodo_InstanciaConArgumento">
+		<constructor-arg index="0"
+			value="Soy el argumento del metodo de instancia" />
+	</bean>
+
+	<!-- FACTORY A USAR PARA LA CREACION DE SALUDO -->
+	<bean id="factory_saludo" class="com.atrium.controlador.Factory_Saludo"
+		scope="prototype" />
+
+	<!-- OPCION DE CREACION POR FACTORY SIN ARGUMENTOS -->
+	<bean id="saludo6" class="com.atrium.controlador.Saludo"
+		factory-bean="factory_saludo" factory-method="crear_Saludo" />
+
+	<!-- OPCION DE CREACION POR FACTORY CON ARGUMENTOS -->
+	<bean id="saludo7" class="com.atrium.controlador.Saludo" autowire="no"
+		factory-bean="factory_saludo" factory-method="crear_SaludoConArgumentos">
+		<constructor-arg index="0" value="Soy el argumento del factory" />
+	</bean>
+
+	<!-- OPCION DE USO DE METODO DE INICIO -->
+	<bean id="saludo8" class="com.atrium.controlador.Saludo" scope="prototype"
+		lazy-init="true" init-method="soy_Inicio" />
+
+	<!-- OPCION DE AUTO ENLAZADO -->
+	<bean id="saludo9" class="com.atrium.controlador.Saludo" />
+	<!-- BEAN INYECTADO POR LA OPCION DE AUTOENLAZADO -->
+	<bean id="otro_saludo" class="com.atrium.controlador.Saludo" />
+
+</beans>

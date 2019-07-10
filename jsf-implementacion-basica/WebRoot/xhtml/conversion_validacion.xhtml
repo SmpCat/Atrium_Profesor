@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!-- Pagina ejemplo de conversion/validacion en JSF -->
+<!-- fecha: 27-4-2017. -->
+<!-- version: 2.7-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+<h:head>
+
+</h:head>
+<h:body>
+
+	<!-- GESTION IDIOMATICA -->
+	<f:loadBundle basename="#{sessionScope.idioma_seleccionado}"
+		var="idioma" />
+
+	<f:view locale="#{usuario_bean.internalizacion_vista}">
+		<!-- FORMULARIO DE PRUEBAS -->
+		<h:form id="formu_conversionvalidacion">
+			<h:panelGrid id="panel_conversionvalidacion" columns="3">
+				<!-- **** 1º CAMPO NOMBRE USUARIO **** -->
+				<h:outputText id="eti_nombre"
+					value="#{idioma['conversion.nombre.eti']}" />
+				<!-- VALIDACION DE CAMPO OBLIGATORIO Y TAMAÑO MAXIMO -->
+				<h:inputText id="nombre_usuario"
+					value="#{usuario_bean.nombre_usuario}" required="true"
+					requiredMessage="#{idioma['error.login.validacionnombre']}"
+					validatorMessage="El tamaño maximo son 20 caracteres">
+					<f:validateLength maximum="20" />
+				</h:inputText>
+				<h:message for="nombre_usuario" />
+				<!-- **** 2º CAMPO CLAVE USUARIO **** -->
+				<h:outputText id="eti_clave"
+					value="#{idioma['conversion.clave.eti']}" />
+				<!-- VALIDACION DE CAMPO OBLIGATORIO Y DE TAMAÑO -->
+				<h:inputSecret id="clave_usuario" redisplay="true"
+					value="#{usuario_bean.clave_usuario}"
+					validatorMessage="Clave obligatoria, minimo 5 caracteres maximo 10.">
+					<f:validateRequired />
+					<f:validateLength maximum="10" minimum="5" />
+				</h:inputSecret>
+				<h:message for="clave_usuario" />
+				<!-- **** 3º CAMPO FECHA ALTA **** -->
+				<h:outputText id="eti_fechaalta"
+					value="#{idioma['conversion.fechaalta.eti']}" />
+				<!-- CONVERSION A FECHA -->
+				<h:inputText id="fecha_alta" value="#{usuario_bean.fecha_alta}"
+					converterMessage="#{idioma['conversion.error.conversion.fecha']}"
+					disabled="true">
+					<f:convertDateTime type="date" pattern="dd/MM/yyyy"
+						locale="#{usuario_bean.internalizacion_vista}" />
+				</h:inputText>
+				<h:message for="fecha_alta" />
+				<!-- **** 4º CAMPO FECHA BAJA **** -->
+				<h:outputText id="eti_fechabaja"
+					value="#{idioma['conversion.fechabaja.eti']}" />
+				<!-- CONVERSION A FECHA -->
+				<!-- VALIDAMOS LAS FECHAS ENTRE SI,VALIDADOR PERSONALIZADO -->
+				<h:inputText id="fecha_baja" value="#{usuario_bean.fecha_baja}"
+					converterMessage="#{idioma['conversion.error.conversion.fecha']}">
+					<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
+					<f:validator validatorId="validar_rangofechas" />
+				</h:inputText>
+				<h:message for="fecha_baja" />
+				<!-- **** 5º CAMPO ROL USUARIO **** -->
+				<h:outputText id="eti_rol" value="Rol usuario" />
+				<!-- CONVERSION PERSONALIZADA -->
+				<h:inputText id="rol_usuario" value="#{usuario_bean.rol_usuario}">
+					<f:converter converterId="convertir_rol" />
+				</h:inputText>
+				<h:message for="rol_usuario" />
+				<!-- **** 6º CAMPO NUMERO USUARIO **** -->
+				<!-- VALIDACION/CONVERSION NUMERICA -->
+				<h:outputText id="eti_carpeta"
+					value="#{idioma['conversion.numero']}" />
+				<h:inputText id="numero_usuario" value="#{usuario_bean.numero}"
+					validatorMessage="Numero muy grande"
+					converterMessage="El texto no es valor numerico">
+					<!-- TYPE ES OBLIGATORIO PARA EL CORRECTO FUNCIONAMIENTO EN ESTA VERSION -->
+					<f:convertNumber type="number" maxIntegerDigits="4" pattern="#,##0" />
+					<f:validateLongRange maximum="8888" />
+				</h:inputText>
+				<h:message for="numero_usuario" />
+				<!-- **** 7º CAMPO email USUARIO **** -->
+				<h:outputText id="eti_email" value="Email" />
+				<!-- VALIDACION CON EXPRESION REGULAR-->
+				<h:inputText id="email" value="#{usuario_bean.email}"
+					required="false" validatorMessage="No es un formato correo valido">
+					<f:validateRegex
+						pattern="(^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$)*" />
+				</h:inputText>
+				<h:message for="email" />
+
+				<!-- **** 8º CAMPO lista roles **** -->
+				<h:outputText id="eti_selectrol" value="Combo Rol" />
+				<h:selectOneMenu id="combo_rol" value="#{usuario_bean.rol_texto}">
+					<f:selectItem itemLabel="Seleccione un rol" itemValue="0" />
+					<f:selectItems id="contenido_select"
+						value="#{usuario_bean.lista_roles}" var="rol"
+						itemLabel="#{rol.descripcionRol}"
+						itemValue="#{rol.codigoRol.toString()}" />
+				</h:selectOneMenu>
+				<h:message for="combo_rol" />
+			</h:panelGrid>
+			<!-- BOTON DE SUMIT PARA REALIZAR LAS CONVERSIONES/VALIDACIONES -->
+			<h:commandButton id="boton"
+				value="#{idioma['conversion.botonconfirmar.eti']}"
+				actionListener="#{usuario_bean.boton_Evento}" />
+		</h:form>
+
+	</f:view>
+</h:body>
+</html>

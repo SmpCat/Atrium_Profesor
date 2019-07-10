@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- AJUSTES -->
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+		<!-- MAPEO DE RECURSOS -->
+		<mapping class="com.atrium.hibernate.Usuarios" />
+		<mapping class="com.atrium.hibernate.Roles" />
+		<mapping class="com.atrium.hibernate.Tareas" />
+	</session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<servlet>
+		<servlet-name>Prueba</servlet-name>
+		<servlet-class>prueba</servlet-class>
+		<!-- DEFINICION DE UN UNICO SERVICIO REST POR SU CLASE -->
+		<init-param>
+			<param-name>jersey.config.server.provider.classnames</param-name>
+			<param-value>com.atrium.servicioscrud.tareas.Servicio_CrudTareas</param-value>
+		</init-param>
+		<!-- DEFINICION DE UN SERVICIO REST POR EL PAQUETE DONDE ESTA -->
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>com.atrium.servicioscrud</param-value>
+		</init-param>
+		<!-- DEFINICION DE MULTIPLES SERVICIOS REST DENTRO DE LA APLICACION -->
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.atrium.servicioscrud.roles.MyApplication</param-value>
+		</init-param>
+	</servlet>
+</web-app>

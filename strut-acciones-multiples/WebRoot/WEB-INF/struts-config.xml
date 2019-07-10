@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- ****** FICHERO DE CONFIGURACION DE STRUT ****** -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 6-11-2017 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<struts-config>
+	<form-beans>
+		<!-- ******** ZONA DE OBJETOS DE DOMINIO (DATOS)******** -->
+		<form-bean name="subida_bean" type="com.atrium.formbeans.Subida_Bean">
+			<description>RECIBIRA EL FICHERO SUBIDO POR EL USUARIO</description>
+		</form-bean>
+		<form-bean name="datos_descarga" type="com.atrium.formbeans.Datos_Descarga">
+			<description>DATOS DEL PROCESO DE DESCARGA</description>
+		</form-bean>
+		<form-bean name="usuario_bean" type="com.atrium.formbeans.Usuario_Bean">
+			<description>VALORES PARA LA GESTION DE USUARIOS.</description>
+		</form-bean>
+	</form-beans>
+	<!-- ********* ZONA DE TRATAMIENTO DE EXCEPCIONES ********* -->
+	<global-exceptions />
+	<!-- ******** ZONA DE LLAMADAS A PAGINAS (NAVEGACION) ******** -->
+	<global-forwards />
+
+	<action-mappings>
+		<!-- ******** ZONA DE ACCIONES (LOGICA/NEGOCIO)******** -->
+		<!-- GESTION DE USUARIOS -->
+		<action path="/usuario" type="com.atrium.acciones.Usuario_Accion"
+			name="usuario_bean" input="/jsp/prueba_accionesmultiples.jsp"
+			parameter="boton">
+			<description>ACCION CRUD DE LA DE USUARIOS</description>
+		</action>
+		<!-- **** ACCIONES DE FICHEROS **** -->
+		<!-- CONTROL DE ACCIONES CON MAPPINGDISPATCHER -->
+		<action path="/subir_fichero" type="com.atrium.acciones.Ficheros_MappingDispatch"
+			parameter="subir_fichero" name="subida_bean" input="/jsp/prueba_accionesmultiples.jsp">
+			<description>ACION PARA RECOGER EL FICHERO SUBIDO POR EL USUARIO,QUE
+				SE GUARDARA EN SU CARPETA DE DOCUMENTACION</description>
+		</action>
+		<!-- DESCARGAS DE FICHEROS -->
+		<action path="/descarga" type="com.atrium.acciones.Ficheros_MappingDispatch"
+			parameter="descargar_fichero" name="datos_descarga"
+			input="/jsp/prueba_accionesmultiples.jsp">
+			<description>ACCION GENERAL PARA DESCARGAR FICHEROS</description>
+		</action>
+		<!-- BORRADO DE FICHEROS -->
+		<action path="/eliminar" type="com.atrium.acciones.Ficheros_MappingDispatch"
+			parameter="eliminar_fichero" name="datos_descarga" input="/jsp/prueba_accionesmultiples.jsp">
+			<description>ACCION GENERAL PARA BORRADOS DE FICHEROS</description>
+		</action>
+		<!-- **** FIN ACCIONES DE FICHEROS **** -->
+		<!-- ******** FIN ZONA DE ACCIONES (LOGICA/NEGOCIO)******** -->
+
+	</action-mappings>
+
+	<!-- ******** ZONA DE RECURSOS IDIOMATICOS (PROPERTIES) ******** -->
+	<message-resources parameter="com.atrium.idiomas.textos_es" />
+
+</struts-config>
+

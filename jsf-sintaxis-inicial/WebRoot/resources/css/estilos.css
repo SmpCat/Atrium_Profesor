@@ -1,0 +1,18 @@
+/*-- Estilos resalte mensajes --* /
+/*-- fecha: 23-1-2016. -- */
+/*-- version: 1 -- */
+.estilo_warn {
+	color: maroon;
+}
+
+.estilo_info {
+	color: blue;
+}
+
+.estilo_fatal {
+	color: silver;
+}
+
+.estilo_error {
+	color: red;
+}

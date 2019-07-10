@@ -1,0 +1,59 @@
+
+/* EJEMPLOS DE SELECTORES */
+/* selector de clase */
+.valor_atributoclass{
+	/* reglas del estilo */
+	/* nombre_propiedad: valor_propiedad; */
+	border: 10px;
+}
+/* selector de id */
+#valor_atributoid{
+	/* reglas del estilo */
+}
+/* selector de etiqueta/elemento */
+p{
+	/* reglas del estilo */
+}
+/* combinado varias etiquetas */
+p,div{
+	/* reglas del estilo */
+}
+/* etiquetas dentro de etiquetas */
+div p{
+	/* reglas del estilo */
+}
+/* etiquetas a continuacion de otras*/
+div + p{
+	/* reglas del estilo */ CSS2
+}
+/* etiquetas que preceden a otras */
+p ~ div{
+	/* reglas del estilo */ CSS3
+}
+
+/* SELECTORES POR COMPORTAMIENTO */
+/* hipervinculos */
+/* pulsacion del link*/
+:active
+/* paso de raton sobre el link*/
+:hover
+/* link pulsados*/
+:visited
+/* link no pulsados*/
+:link
+/* comportamiento de elementos*/ CSS3
+/* elemento seleccionado */
+:checked
+/* elemento activo */
+:enabled
+/* elemento desactivado */
+:disabled
+/* ganancia de foco*/
+:focus
+/* solo lectura*/
+:readonly
+/* modificable por usuario*/
+:read-write
+/* obligatorio */
+:required
+

@@ -1,0 +1,12 @@
+/* Estilos plantilla banner --* /
+/*-- fecha: 7-9-2015. -- */
+/*-- version: 2 -- */
+
+#capa_idioma {
+	position: absolute;
+	top: 35px;
+	left:1100px;
+	width: 140px;
+	height: 40px;
+	background-color: rgb(215, 215, 255);
+}

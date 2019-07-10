@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>spring-mvc-controller</display-name>
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB CON SPRING MVC -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 8-11-2017 ****** -->
+	<!-- ****** VERSION: 2.0 ****** -->
+
+	<!-- CONTROLADOR FRONTAL Y UNICO DE SPRING MVC -->
+	<servlet>
+		<servlet-name>controlador_mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- RUTA Y NOMBRE DEL FICHERO DE CONFIGURACION DE SPRING -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>WEB-INF/classes/com/atrium/spring/spring-mvc.xml
+						 </param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>controlador_mvc</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	<!-- FIN ZONA DE CONTROLADORES -->
+
+	<!-- ACCION INICIAL DE LA APLICACION -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

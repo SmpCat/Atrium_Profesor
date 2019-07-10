@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!ELEMENT TITULO (#PCDATA)>
+        <!ELEMENT GENERAL EMPTY>
+        <!ELEMENT INGREDIENTES (INGREDIENTE*) >
+        <!ELEMENT PROCEDIMIENTO (#PCDATA)>
+        <!ELEMENT INGREDIENTE EMPTY >        
+        <!ATTLIST GENERAL
+                COCINA CDATA #REQUIRED
+                DIFICULTAD (fácil | media | alta) #REQUIRED
+                TIPO (sopas | carnes | verduras | salsa | guarnición) #REQUIRED
+        >
+        <!ATTLIST INGREDIENTE
+                NOMBRE CDATA #REQUIRED
+                CANTIDAD CDATA #REQUIRED
+                UNIDAD CDATA #REQUIRED
+        >
+

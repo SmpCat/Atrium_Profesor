@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!-- Pagina ejemplo de carga cruzada en JSF -->
+<!-- fecha: 10-1-2017. -->
+<!-- version: 2.7-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+<h:head>
+
+</h:head>
+<h:body>
+	<!-- EJEMPLO DE CARGA CRUZADA DE LISTAS -->
+	<h:form id="formu_listas">
+		<h:panelGrid id="panel_listas" columns="6">
+			<h:outputText id="eti_pais" value="Paises" />
+			<h:selectOneMenu id="lista_pais"
+				value="#{seleccion_bean.pais_seleccionado}"
+				valueChangeListener="#{seleccion_bean.carga_Provincias}" >
+				<!-- CONTENIDO ESTATICO -->
+				<f:selectItem id="sin_seleccion" itemValue="0"
+					itemLabel="Seleccione un pais" />
+				<!-- CONTENIDO DINAMICO -->
+				<f:selectItems id="lista_paises"
+					value="#{seleccion_bean.lista_paises}" />
+				<!-- PETICION VIA AJAX AL SERVIDOR -->
+				<f:ajax event="valueChange" execute="@this"
+					render="lista_provincias lista_municipios" />
+			</h:selectOneMenu>
+			<h:outputText id="eti_provincia" value="Provincias" />
+			<h:selectOneMenu id="lista_provincias"
+				value="#{seleccion_bean.provincia_seleccionada}"
+				valueChangeListener="#{seleccion_bean.cargar_Municipios}">
+				<f:selectItem id="sin_provincia" itemValue="0"
+					itemLabel="#{seleccion_bean.texto_provincia}" />
+				<f:selectItems id="lista_provi"
+					value="#{seleccion_bean.lista_provincias}" />
+				<f:ajax event="valueChange" execute="@this"
+					render="lista_municipios" />
+			</h:selectOneMenu>
+			<h:outputText id="eti_municipios" value="Municipios" />
+			<h:selectOneMenu id="lista_municipios"
+				value="#{seleccion_bean.municipio_seleccionado}">
+				<f:selectItem id="sin_municipio" itemValue="0"
+					itemLabel="#{seleccion_bean.texto_municipios}" />
+				<f:selectItems id="lista_muni"
+					value="#{seleccion_bean.lista_municipios}" />
+			</h:selectOneMenu>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

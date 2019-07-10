@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!ELEMENT remesa-coches (cantidad,dia-embarque,coche*) >
+<!ELEMENT cantidad (#PCDATA)>
+<!ELEMENT dia-embarque (#PCDATA)>
+<!ELEMENT coche (marca,modelo,precio,kilometros,fecha-matriculacion)>
+<!ELEMENT marca (#PCDATA)>
+<!ELEMENT modelo (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT kilometros (#PCDATA)>
+<!ELEMENT fecha-matriculacion (#PCDATA)>
+<!ATTLIST coche segundamano (si|no) "no">

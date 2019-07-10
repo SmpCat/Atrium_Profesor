@@ -1,0 +1,16 @@
+#MyEclipse Hibernate Properties
+#Wed Nov 02 16:50:24 CET 2016
+genVersionTag=false
+genAnnotations=false
+configFile=/hibernate-implementacion-relaciones/src/hibernate.cfg.xml
+reStrategyClass=
+sessionFactoryId=
+profile=
+detectM2M=false
+genBasicCompId=false
+keyGenerator=
+createConfigFile=true
+basePersistenceClass=
+detectO2O=false
+useJavaTypes=true
+reSettingsFile=

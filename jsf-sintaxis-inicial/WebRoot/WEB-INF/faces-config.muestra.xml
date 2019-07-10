@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<!-- ****** FICHERO DE CONFIGURACION DE JSF ** EJEMPLO NO FUNCIONAL ****** -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 20-4-2017 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- MANAGEDBEAN PARA LAS VISTAS -->
+	<managed-bean>
+		<managed-bean-name>nombre del bean</managed-bean-name>
+		<managed-bean-class>ruta y nombre de clase</managed-bean-class>
+		<managed-bean-scope>visibilidad del bean</managed-bean-scope>
+		<managed-property>
+			<property-name>nombre propiedad</property-name>
+			<value>valor de la propiedad</value>
+		</managed-property>
+	</managed-bean>
+	<!-- VALIDADORES PARA LOS DATOS DE LOS COMPONENTES -->
+	<validator>
+		<validator-id>nombre/identificador del validador</validator-id>
+		<validator-class>ruta y nombre de la clase</validator-class>
+	</validator>
+	<!-- CONVERSORES PARA LOS DATOS DE LOS COMPONENTES -->
+	<converter>
+		<converter-id>nombre/identificador del validador</converter-id>
+		<converter-class>ruta y nombre de la clase</converter-class>
+	</converter>
+
+	<!-- MODIFICACIONES AL FUNCIONAMIENTO DE JSF -->
+	<application>
+		<el-resolver>ruta y nombre de la clase</el-resolver>
+	</application>
+
+	<!-- NAVEGACION ENTRE PAGINAS -->
+	<navigation-rule>
+		<from-view-id>RUTA Y EL NOMBRE DE LA VISTA/XHTML</from-view-id>
+		<navigation-case>
+			<from-outcome>TEXTO IDENTIFICADOR</from-outcome>
+			<to-view-id>RUTA Y NOBRE DE LA VISTA/XHMTL</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- FICHERO DE CONFIGURACION DE SPRING -->
+	<!-- SOLO CON VALOR DOCUMENTATIVO -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 14-11-2016 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- DEFINICION DE OBJETO SIN INYECCION DE DEPENDENCIAS -->
+	<bean id="identificador objeto" class="tipo/clase objeto" scope="como se crea el objeto"
+		lazy-init="cuando" />
+
+	<!-- VALORES DE SCOPE SINGLETON-PROTOTYPE-SESSION-REQUEST -->
+	<!-- VALORES DE LAZY-INIT TRUE - FALSE -->
+
+	<!-- DEFINICION DE OBJETO CON INYECCION DE DEPENDENCIAS -->
+	<bean id="identificador objeto" class="tipo/clase objeto">
+		<property name="nombre propiedad" value="valor propiedad"
+			ref="valor propiedad" />
+	</bean>
+
+	<!-- VALORES POSIBLES PARA VALUE TEXTO - NUMERO - BOOLEAN - DATE - #{EXPRESION 
+		DINAMICA} -->
+	<!-- VALORES POSIBLES PARA REF - EL ID DE OTRO OBJETO -->
+
+	<!-- *** VARIANTES DE FORMA DE CONSTRUIR UN OBJETO *** -->
+	<!-- DEFINICION DE OBJETO CON LLAMADA A CONSTRUCTOR CON ARGUMENTOS -->
+	<bean id="identificador objeto" class="tipo/clase objeto">
+		<constructor-arg index="posicion" name="nombre" type="tipo/clase"
+			value="valor propiedad" ref="valor propiedad" />
+	</bean>
+	<!-- DEFINICION DE OBJETO CON LLAMADA A METODO DE INSTANCIA -->
+	<bean id="identificador objeto" class="tipo/clase objeto"
+		factory-method="metodo de instancia" />
+	<!-- DEFINICION DE OBJETO CON LLAMADA A FACTORIA EXTERNA -->
+	<bean id="identificador objeto" class="tipo/clase objeto"
+		factory-method="metodo de instancia" factory-bean="clase factoria" />
+	<!-- DEFINICION DE OBJETO CON LLAMADA A METODO DE INICIO -->
+	<bean id="identificador objeto" class="tipo/clase objeto"
+		init-method="metodo de inicio" />
+</beans>

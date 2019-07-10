@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE RECETA [
+        <!ELEMENT TITULO (#PCDATA)>
+        <!ELEMENT GENERAL EMPTY>
+        <!ELEMENT INGREDIENTES (INGREDIENTE*) >
+        <!ELEMENT PROCEDIMIENTO (#PCDATA)>
+        <!ELEMENT INGREDIENTE EMPTY >        
+        <!ATTLIST GENERAL
+                COCINA CDATA #REQUIRED
+                DIFICULTAD (facil | media | alta) #REQUIRED
+                TIPO (sopas | carnes | verduras | salsa | guarnición) #REQUIRED
+        >
+        <!ATTLIST INGREDIENTE
+                NOMBRE CDATA #REQUIRED
+                CANTIDAD CDATA #REQUIRED
+                UNIDAD CDATA #REQUIRED
+        >
+]>
+<RECETA>
+        <TITULO>Blinis</TITULO>
+        <GENERAL TIPO="postre" CLASE="reposter¡a tortitas" PREPARACION="muy facil" NACIONALIDAD="rusia" REGION="" COCINA="rusa"/>
+        <INGREDIENTES COMENSALES="6">
+                <INGREDIENTE NOMBRE="harina" CANTIDAD="1 y 1/2" UNIDAD="vaso" />
+                <INGREDIENTE NOMBRE="leche entera" CANTIDAD="4" UNIDAD="cucharada" />
+                <INGREDIENTE NOMBRE="levadura" CANTIDAD="4" UNIDAD="cucharada" />
+                <INGREDIENTE NOMBRE="huevos" CANTIDAD="3" UNIDAD="" />
+                <INGREDIENTE NOMBRE="sal" CANTIDAD="1" UNIDAD="cucharada de caf‚" />
+                <INGREDIENTE NOMBRE="mantequilla derretida" CANTIDAD="" UNIDAD="" />
+        </INGREDIENTES>
+        <PROCEDIMIENTO>
+        Preparar la mas: diluir la levadura en 1 cucharada de leche tibia. Dejar fermentar 15 minutos. Calentar la lecha sobrante. Separar las yemas de las claras de huevo. Echar la harina, las yemas de huevo y la sal en el robot. A¤adir la leche caliente con la levadura diluida. Ehchar la masa en un recipiente, tapar con un pa¤o y dejar reposar durnate 1h 30.
+        En el £ltimo momento, batir las claras a punto de nieve y mezclar con la masa. Untar de mantequilla 1 o 2 sartenes especiales para hacer blinis y echar la medida de 1 cazo en cada sart‚n. Cocer 1 min 30s a fuego suave por cada lado.
+        Reservar caliente. Servir acompa¤ado de ahumados, nata agria y eneldo.
+        </PROCEDIMIENTO>
+</RECETA>

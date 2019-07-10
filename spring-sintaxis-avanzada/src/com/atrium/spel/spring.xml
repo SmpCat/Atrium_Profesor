@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FICHERO DE CONFIGURACION DE SPRING -->
+<!-- EJEMPLO DE DEFINICION CON ANOTACIONES -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 15-3-2017 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!-- CARGAR EL ARCHIVO DE PROPIEDADES -->
+	<bean id="mappings"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"
+			value="classpath:com/atrium/spel/mensajes.properties" />
+	</bean>
+
+	<!-- EXPRESION DE LLAMADA DIRECTA A PROPIEDAD -->
+	<bean id="cliente1" class="com.atrium.spel.Cliente">
+		<!-- <constructor-arg name="nombre" value="Juan" /> -->
+		<constructor-arg name="nombre" value="${pruebaNombre}" />
+		<constructor-arg name="nuevo" value="false" />
+		<constructor-arg name="nif" value="12345678-A" />
+		<constructor-arg name="cifraCompras" value="167.7" />
+	</bean>
+
+	<!-- EXPRESIONES DE LLAMADA DIRECTA Y CONDICIONES -->
+	<bean id="cliente2" class="com.atrium.spel.Cliente">
+		<property name="nombre" value="#{'Manolo'}" />
+		<property name="nuevo" value="#{cliente1.nuevo}" />
+		<property name="nif" value="#{cliente1.nif?:'xxxxx'}" />
+		<!-- <property name="nif" value="#{'98765432' + '-B'}" /> -->
+		<property name="cifraCompras"
+			value="#{cliente1.getCifraCompras() +
+                                         (cliente1.getCifraCompras() * 0.1)}" />
+	</bean>
+
+	<bean id="prueba" class="com.atrium.spel.Pruebas">
+		<property name="valorContador"
+			value="#{T(com.atrium.spel.Cliente).incrementarContador()}" />
+		<property name="importeCompras"
+			value="#{(cliente1.cifraCompras gt 12000000) ?
+                            cliente1.cifraCompras : 12000000}" />
+		<property name="clientes">
+			<list value-type="com.atrium.spel.Cliente">
+				<ref bean="cliente1" />
+				<ref bean="cliente2" />
+				<bean class="com.atrium.spel.Cliente">
+					<constructor-arg name="nombre" value="Maria" />
+					<constructor-arg name="nuevo" value="true" />
+					<constructor-arg name="nif" value="6654368007-C" />
+					<constructor-arg name="cifraCompras" value="150" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="prueba2" class="com.atrium.spel.Pruebas">
+		<property name="mejoresClientes" value="#{prueba.clientes.?[cifraCompras gt 170000]}" />
+		<property name="nuevaColeccion" value="#{prueba.clientes.![nombre + ',' + nif]}" />
+	</bean>
+</beans>

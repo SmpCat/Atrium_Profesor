@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB CON SPRING MVC -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 9-2-2018 ****** -->
+	<!-- ****** VERSION: 1.7 ****** -->
+
+	<!-- ZONA DE SERVLET -->
+	<!-- CONTROLADOR FRONTAL DE LA APLICACION (FACHADA) -->
+	<servlet>
+		<servlet-name>controlador_mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- PARAMETRO QUE INDICA RUTA Y NOMBRE DEL FICHERO DESCRIPTOR DE SPRING -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>WEB-INF/classes/com/atrium/spring/modelo.xml,
+						 			WEB-INF/classes/com/atrium/spring/spring-mvc.xml,
+						 			WEB-INF/classes/com/atrium/spring/auxiliares_proceso.xml
+						</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>controlador_mvc</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	<!-- FIN ZONA DE SERVLET -->
+
+	<!-- PARAMETROS DE CONFIGURACION DE LA APLICACION -->
+	<context-param>
+		<description>idioma por defecto de la aplicacion</description>
+		<param-name>idioma_por_defecto</param-name>
+		<param-value>es</param-value>
+	</context-param>
+	<context-param>
+		<description>indicara nombre y ruta dentro del proyecto para los documentos</description>
+		<param-name>repositorio_documental</param-name>
+		<param-value>/repositorio_documentos</param-value>
+	</context-param>
+
+	<!-- MECANISMO DE INICIO DE APLICACION CON PRIMERA PAGINA DE RESPUESTA -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- *** CONFIGURACION DE PAGINAS JSP *** -->
+	<!-- OBLIGATORIO EN 8.5 DE TOMCAT -->
+	<jsp-config>
+		<!-- LOCALIZACION DE LOS TLD -->
+		<taglib>
+			<taglib-uri>http://com.atrium.jsg</taglib-uri>
+			<taglib-location>/tlds/mis_etiquetas.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE RECETA [
+        <!ELEMENT TITULO (#PCDATA)>
+        <!ELEMENT GENERAL EMPTY>
+        <!ELEMENT INGREDIENTES (INGREDIENTE*) >
+        <!ELEMENT PROCEDIMIENTO (#PCDATA)>
+        <!ELEMENT INGREDIENTE EMPTY >        
+        <!ATTLIST GENERAL
+                COCINA CDATA #REQUIRED
+                DIFICULTAD (facil | media | alta) #REQUIRED
+                TIPO (sopas | carnes | verduras | salsa | guarnición) #REQUIRED
+        >
+        <!ATTLIST INGREDIENTE
+                NOMBRE CDATA #REQUIRED
+                CANTIDAD CDATA #REQUIRED
+                UNIDAD CDATA #REQUIRED
+        >
+]>
+<RECETA>
+        <TITULO>Crepes de Esp rragos</TITULO>
+        <GENERAL TIPO="postre" CLASE="reposter¡a tortitas"  PREPARACIàN="muy f cil"  REALIZACION="15" COCCIàN="20" REPOSO="30" NACIONALIDAD="espa¤ola" REGION="" COCINA="espa¤ola"/>
+        <INGREDIENTES COMENSALES="4">
+                <INGREDIENTE NOMBRE="esp rragos trigueros" CANTIDAD="1" UNIDAD="manojo" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="leche" CANTIDAD="1/4" UNIDAD="litro" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="mantequilla" CANTIDAD="3" UNIDAD="cucharadas soperas" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="harina" CANTIDAD="6" UNIDAD="cucharadas" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="huevos" CANTIDAD="3" UNIDAD="" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="co¤ac" CANTIDAD="1" UNIDAD="cucharilla de caf‚" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="salsa besamel" CANTIDAD="" UNIDAD="" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="sal" CANTIDAD="" UNIDAD="" PRINCIPAL="no"/>
+        </INGREDIENTES>
+        <PROCEDIMIENTO>
+        Mezclar la leche con 2 cucharadas soperas de mantequilla derretida, la harina, los huevos y el co¤ac. Sazonar con sal y dejar reposar durante 30 min.
+        Cortar la parte tierna de los esp rragos en trozos peque¤os y rehogar en el resto de mantequilla durante 10 min. Mezclar con la masa de las crepes.
+        Derretir un poco de mantequilla en una sart‚n peque¤a, echar 2 cucharadas de la masa de crepes y cuando est‚ cocida darle la vuelta para que quedae dorada por ambos lados.
+        Preparar el resto de las crepes del mismo modo, enrollarlas y servirlas con salsa besamel.
+        </PROCEDIMIENTO>
+</RECETA>

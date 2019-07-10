@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>web-implementacion-listas</display-name>
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 22-11-2016 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- ***** MECANISMO DE ARRANQUE DE SPRING EN UNA APLICACION WEB (OBLIGATORIO)***** -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- PARAMETRO QUE INDICA NOMBRE Y RUTA DEL FICHERO DE CONFIGURACION DE 
+		SPRING -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:com/atrium/spring/modelo.xml</param-value>
+	</context-param>
+	<!-- ***** FIN MECANISMO DE ARRANQUE DE SPRING EN UNA APLICACION WEB (OBLIGATORIO)***** -->
+
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+	
+	<!-- *** CONFIGURACION DE PAGINAS JSP *** -->
+	<!-- OBLIGATORIO EN 8.5 DE TOMCAT -->
+	<jsp-config>
+		<!-- LOCALIZACION DE LOS TLD -->
+		<taglib>
+			<taglib-uri>http://com.atrium.jsg</taglib-uri>
+			<taglib-location>/tlds/mis_etiquetas.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

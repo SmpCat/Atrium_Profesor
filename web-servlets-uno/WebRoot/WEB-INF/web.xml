@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB SERVLETS -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 20-10-2016 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- ***** COMPONENTES DE UNA APLICACION WEB ***** -->
+	<!-- SERVLET -->
+	<servlet>
+		<description>Ejemplo basico de servlet</description>
+		<servlet-name>Servlet_Inicial</servlet-name>
+		<servlet-class>com.atrium.servlets.Servlet_Inicial</servlet-class>
+	</servlet>
+	<!-- PETICIONES QUE ATENDERA EL SERVLET -->
+	<servlet-mapping>
+		<servlet-name>Servlet_Inicial</servlet-name>
+		<url-pattern>/Servlet_Inicial</url-pattern>
+	</servlet-mapping>
+	<!-- FIN SERVLET -->
+
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+</web-app>

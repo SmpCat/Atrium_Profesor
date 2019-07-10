@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!-- Pagina ejemplo menus  -->
+<!-- fecha: 4-5-2017. -->
+<!-- version: 2.7-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core"
+	xmlns:ace="http://www.icefaces.org/icefaces/components">
+<h:head>
+	<title>ICEfaces</title>
+</h:head>
+<h:body>
+
+	<h:form id="formu_menus">
+		<h:panelGrid id="panel_menus" columns="4">
+			<!-- MENU ESTATICO EN CONTENEDOR VERTICAL -->
+			<ace:menu id="menu_vertical">
+				<!-- CONTENIDO DEL MENUBAR (SUBMENUS Y MENUITEM) -->
+				<ace:submenu id="sub1" label="Submenu 1">
+					<ace:menuItem id="op11" value="Opcion 11"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op12" value="Opcion 12"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+				</ace:submenu>
+				<ace:submenu id="sub2" label="Submenu 2">
+					<ace:menuItem id="op21" value="Opcion 21"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op22" value="Opcion 22"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op23" value="Opcion 23"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+				</ace:submenu>
+			</ace:menu>
+			<!-- MENU ESTATICO EN CONTENEDOR HORIZONTAL -->
+			<ace:menuBar id="menu_horizontal" autoSubmenuDisplay="true"
+				effect="slide" effectDuration="1500">
+				<!-- CONTENIDO DEL MENUBAR (SUBMENUS Y MENUITEM) -->
+				<ace:submenu id="sub1h" label="Submenu 1">
+					<ace:menuItem id="op11h" value="Opcion 11"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op12h" value="Opcion 12"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+				</ace:submenu>
+				<ace:submenu id="sub2h" label="Submenu 2">
+					<ace:menuItem id="op21h" value="Opcion 21"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op22h" value="Opcion 22"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op23h" value="Opcion 23"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+				</ace:submenu>
+			</ace:menuBar>
+			<!-- MENU ESTATICO EN CONTENEDOR HORIZONTAL CON MULTICOLUMNAS -->
+			<ace:menuBar id="menu_horizontalmc" autoSubmenuDisplay="true"
+				effect="slide" effectDuration="1500">
+				<!-- OPCION DE MENU CON MULTIPLES COLUMNAS -->
+				<ace:multiColumnSubmenu id="columna_multiple"
+					label="Menu multicolumnas">
+					<ace:menuColumn id="priemra_columna">
+						<ace:submenu id="sub1mc" label="Submenu 1">
+							<ace:menuItem id="op11mc" value="Opcion 11"
+								actionListener="#{prueba_menu.evento_Menu}">
+								<ace:ajax event="activate" />
+							</ace:menuItem>
+							<ace:menuItem id="op12mc" value="Opcion 12"
+								actionListener="#{prueba_menu.evento_Menu}">
+								<ace:ajax event="activate" />
+							</ace:menuItem>
+						</ace:submenu>
+					</ace:menuColumn>
+					<ace:menuColumn id="segunda_columna">
+						<ace:submenu id="sub2mc" label="Submenu 2">
+							<ace:menuItem id="op21mc" value="Opcion 21"
+								actionListener="#{prueba_menu.evento_Menu}">
+								<ace:ajax event="activate" />
+							</ace:menuItem>
+							<ace:menuItem id="op22mc" value="Opcion 22"
+								actionListener="#{prueba_menu.evento_Menu}">
+								<ace:ajax event="activate" />
+							</ace:menuItem>
+							<ace:menuItem id="op23mc" value="Opcion 23"
+								actionListener="#{prueba_menu.evento_Menu}">
+								<ace:ajax event="activate" />
+							</ace:menuItem>
+						</ace:submenu>
+					</ace:menuColumn>
+				</ace:multiColumnSubmenu>
+			</ace:menuBar>
+
+			<!-- MENU ESTATICO CON SEPARADOR EN CONTENEDOR VERTICAL -->
+			<ace:menu id="menu_verticalseparator">
+				<!-- CONTENIDO DEL MENUBAR (SUBMENUS Y MENUITEM) -->
+				<ace:submenu id="sub1separator" label="Submenu 1" >
+					<ace:menuItem id="op11separator" value="Opcion 11"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op12separator" value="Opcion 12"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+				</ace:submenu>
+				<ace:menuSeparator />
+				<ace:submenu id="sub2separator" label="Submenu 2">
+					<ace:menuItem id="op21separator" value="Opcion 21"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuSeparator />
+					<ace:menuItem id="op22separator" value="Opcion 22"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+					<ace:menuItem id="op23separator" value="Opcion 23"
+						actionListener="#{prueba_menu.evento_Menu}">
+						<ace:ajax event="activate" />
+					</ace:menuItem>
+				</ace:submenu>
+			</ace:menu>
+		</h:panelGrid>
+		<!-- MENU DE BOTON -->
+		<ace:menuButton id="menu_boton" value="Menu boton" effect="slide"
+			effectDuration="1500">
+			<ace:menuItem id="op21mb" value="Opcion 21"
+				actionListener="#{prueba_menu.evento_Menu}">
+				<ace:ajax event="activate" />
+			</ace:menuItem>
+			<ace:menuItem id="op22mb" value="Opcion 22"
+				actionListener="#{prueba_menu.evento_Menu}">
+				<ace:ajax event="activate" />
+			</ace:menuItem>
+			<ace:menuItem id="op23mb" value="Opcion 23"
+				actionListener="#{prueba_menu.evento_Menu}">
+				<ace:ajax event="activate" />
+			</ace:menuItem>
+		</ace:menuButton>
+		<!-- MENU CONTEXTUAL -->
+		<ace:contextMenu id="menu_contextual">
+			<ace:submenu id="sub1mct" label="Submenu 1">
+				<ace:menuItem id="op11mct" value="Opcion 11"
+					actionListener="#{prueba_menu.evento_Menu}">
+					<ace:ajax event="activate" />
+				</ace:menuItem>
+				<ace:menuItem id="op12mct" value="Opcion 12"
+					actionListener="#{prueba_menu.evento_Menu}">
+					<ace:ajax event="activate" />
+				</ace:menuItem>
+			</ace:submenu>
+			<ace:submenu id="sub2mct" label="Submenu 2">
+				<ace:menuItem id="op21mct" value="Opcion 21"
+					actionListener="#{prueba_menu.evento_Menu}">
+					<ace:ajax event="activate" />
+				</ace:menuItem>
+				<ace:menuItem id="op22mct" value="Opcion 22"
+					actionListener="#{prueba_menu.evento_Menu}">
+					<ace:ajax event="activate" />
+				</ace:menuItem>
+				<ace:menuItem id="op23mct" value="Opcion 23"
+					actionListener="#{prueba_menu.evento_Menu}">
+					<ace:ajax event="activate" />
+				</ace:menuItem>
+			</ace:submenu>
+		</ace:contextMenu>
+		<!-- MENU MIGAS DE PAN ESTATICO -->
+		<ace:breadcrumbMenu id="menu_migasdepan">
+			<ace:menuItem id="op23mmp" value="Opcion 23mmp"
+				actionListener="#{prueba_menu.evento_Menu}">
+				<ace:ajax event="activate" />
+			</ace:menuItem>
+			<ace:menuItem id="op24mmp" value="Opcion 24mmp"
+				actionListener="#{prueba_menu.evento_Menu}">
+				<ace:ajax event="activate" />
+			</ace:menuItem>
+			<ace:menuItem id="op25mmp" value="Opcion 25mmp"
+				actionListener="#{prueba_menu.evento_Menu}">
+				<ace:ajax event="activate" />
+			</ace:menuItem>
+			<ace:menuItem id="op26mmp" value="Opcion 26mmp"
+				actionListener="#{prueba_menu.evento_Menu}">
+				<ace:ajax event="activate" />
+			</ace:menuItem>
+		</ace:breadcrumbMenu>
+	</h:form>
+</h:body>
+</html>

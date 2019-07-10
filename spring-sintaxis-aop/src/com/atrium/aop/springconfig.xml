@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!-- FICHERO DE CONFIGURACION DE SPRING -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 29-3-2017. ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- CLASE INTERCEPTADA -->
+	<bean id="aplicacion" class="com.atrium.aop.Negocio">
+		<property name="nombre" value="Juan" />
+		<property name="edad" value="55" />
+		<property name="dato" value="Mi dato" />
+	</bean>
+
+	<!-- CLASE LLAMADA EN LA INTERCEPCION -->
+	<bean id="aspecto" class="com.atrium.aop.Aspecto" />
+
+	<!-- DEFINICION DE LA INTERCEPCION (CUANDO-QUE) -->
+	<aop:config>
+		<!-- DEFINICION DE LOS METODOS INTERCEPTADOS (CUANDO) -->
+		<aop:pointcut id="hazalgo0"
+			expression="execution (void com.atrium.aop.Negocio.HazAlgo())" />
+		<aop:pointcut id="hazalgo2"
+			expression="execution (void com.atrium.aop.Negocio.HazAlgo(String, int))  
+        and args(nombre, edad)" />
+		<aop:pointcut id="hazalgo3"
+			expression="execution (void com.atrium.aop.Negocio.HazAlgo(String, int, String)) 
+        and args(nombre, edad, dato) )" />
+		<aop:pointcut id="hazalgo22"
+			expression="execution (void com.atrium.aop.Negocio.HazAlgo(String, String)) 
+        and args(nombre, dato) )" />
+
+		<!-- DEFINICION DE LOS METODOS A LLAMAR (QUE) -->
+		<!-- SE EJECUTA ANTES DEL METODO -->
+		<aop:aspect ref="aspecto">
+			<aop:before method="antes0" pointcut-ref="hazalgo0" />
+		</aop:aspect>
+		<aop:aspect ref="aspecto">
+			<aop:before method="antes2" pointcut-ref="hazalgo2"
+				arg-names="nombre, edad" />
+		</aop:aspect>
+		<aop:aspect ref="aspecto">
+			<aop:before method="antes22" pointcut-ref="hazalgo22"
+				arg-names="nombre, dato" />
+		</aop:aspect>
+		<aop:aspect ref="aspecto">
+			<aop:before method="antes3" pointcut-ref="hazalgo3"
+				arg-names="nombre, edad, dato" />
+		</aop:aspect>
+		
+		<!-- SE EJECUTA DESPUES DEL METODO -->
+		<aop:aspect ref="aspecto">
+			<aop:after method="despues0" pointcut-ref="hazalgo0" />
+		</aop:aspect>
+		<aop:aspect ref="aspecto">
+			<aop:after method="despues2" pointcut-ref="hazalgo2"
+				arg-names="nombre, edad" />
+		</aop:aspect>
+		<aop:aspect ref="aspecto">
+			<aop:after method="despues22" pointcut-ref="hazalgo22"
+				arg-names="nombre, dato" />
+		</aop:aspect>
+		<aop:aspect ref="aspecto">
+			<aop:after method="despues3" pointcut-ref="hazalgo3"
+				arg-names="nombre, edad, dato" />
+		</aop:aspect>
+	</aop:config>
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+<h:head>
+	<!-- CARGA DE RECURSOS ESTATICOS -->
+	<h:outputStylesheet name="css/estilos.css" />
+</h:head>
+<h:body>
+
+	<!-- CREACION DEL RESOURCEBUNDLE PARA LA IDIMATIZACION -->
+	<f:loadBundle basename="#{sessionScope.idioma_seleccionado}"
+		var="idioma" />
+
+	<!-- FORMULARIO -->
+	<h:form id="formu_login">
+		<!-- CONTENEDOR COMPONENTES -->
+		<h:panelGrid id="panel_login" columns="3">
+			<!-- COMPONENTES DEL FORMULARIO -->
+			<h:outputText id="eti_nombre"
+				value="#{idioma['formu.login.eti.nombreusuario']}" />
+			<h:inputText id="nombre_login" value="#{login_bean.nombre}" />
+			<h:message id="error_nombrelogin" for="nombre_login"
+				showDetail="false" showSummary="true" warnClass="estilo_warn" 
+				infoClass="estilo_info" />
+			<h:outputText id="eti_clave" value="#{idioma['formu.login.eti.claveusario']}" />
+			<h:inputText id="clave_login" value="#{login_bean.clave}" />
+			<h:message id="error_clavelogin" for="clave_login" showSummary="true"
+				showDetail="false" warnClass="estilo_warn" infoClass="estilo_info" />
+			<h:commandButton id="boton" value="#{idioma['formu.login.bot.comprobar']}"
+				action="#{login_bean.comprobar_Credenciales}"
+				actionListener="#{login_bean.evento_ComprobarCredenciales}" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

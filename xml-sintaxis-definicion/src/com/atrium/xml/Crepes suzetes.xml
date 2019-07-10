@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE RECETA [
+        <!ELEMENT TITULO (#PCDATA)>
+        <!ELEMENT GENERAL EMPTY>
+        <!ELEMENT INGREDIENTES (INGREDIENTE*) >
+        <!ELEMENT PROCEDIMIENTO (#PCDATA)>
+        <!ELEMENT INGREDIENTE EMPTY >        
+        <!ATTLIST GENERAL
+                COCINA CDATA #REQUIRED
+                DIFICULTAD (facil | media | alta) #REQUIRED
+                TIPO (sopas | carnes | verduras | salsa | guarnición) #REQUIRED
+        >
+        <!ATTLIST INGREDIENTE
+                NOMBRE CDATA #REQUIRED
+                CANTIDAD CDATA #REQUIRED
+                UNIDAD CDATA #REQUIRED
+        >
+]>
+<RECETA>
+        <TITULO>Crepes suzettes</TITULO>
+        <GENERAL TIPO="postre" CLASE="reposter¡a tortitas"  PREPARACIàN="muy f cil"  NACIONALIDAD="francesa" REGION="" COCINA="francesa" REALIZACION="20" COCCIàN="20" REPOSO="60"  />
+        <INGREDIENTES COMENSALES="6">
+                <!-- Para la masa -->
+                <INGREDIENTE NOMBRE="harina" CANTIDAD="3" UNIDAD="mitades de vaso" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="huevos" CANTIDAD="2" UNIDAD="" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="leche" CANTIDAD="5" UNIDAD="mitades de cucharada sopera" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="aceite de oliva" CANTIDAD="2" UNIDAD="cucharada sopera" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="sal" CANTIDAD="" UNIDAD="" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="pimienta molida" CANTIDAD="" UNIDAD="" PRINCIPAL="no"/>
+                <!-- Para el sirope -->
+                <INGREDIENTE NOMBRE="mantequilla" CANTIDAD="8" UNIDAD="cucharadas soperas" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="zumo de naranja" CANTIDAD="2" UNIDAD="naranja" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="az£car" CANTIDAD="6" UNIDAD="cucharadas soperas" PRINCIPAL="no"/>
+                <INGREDIENTE NOMBRE="licor de Grand Marnier" CANTIDAD="1/3" UNIDAD="vaso" PRINCIPAL="no"/>
+                <!-- Para la cocci¢n -->
+                <INGREDIENTE NOMBRE="mantequilla derretida" CANTIDAD="" UNIDAD="" PRINCIPAL="no"/>
+        </INGREDIENTES>
+        <PROCEDIMIENTO>
+Batir la harina para crepes, los huevos, el aceite y la sal. A¤adir la leche y 1/2 cucharada sopera de agua sin dejar de batir. Cuando la masa est‚ homeg‚nea, dejar de batir y echar en un recipiente. Dejar que repose durante 1 h.
+Repartir la masa en medidas de 1 cazo y fre¡r en dos sartenes al mismo tiempo. A medida que se vayan haciendol, reservar calientes, preferiblemente al ba¤o Mar¡a. Tapar con papel de aluminio.
+Para el sirope, derretir la mantequilla en un cazo con el az£car, el zumo de naranja y unas cuantas ralladuras de naranja y la mitad del Grand Marnier. Calentar la otra mitad en otro cazo.
+Cuando se vaya a servir, calentar el sirope y el Grand Marnier. Echar las crepes dobladas en una sart‚n. Regar con el sirope hirviendo y el Grand Marnier. Flambear.
+
+        </PROCEDIMIENTO>
+</RECETA>

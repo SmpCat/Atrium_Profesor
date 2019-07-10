@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+/* Estilos formulario login --* /
+/* autor: Juan Antonio Solves Garcia. */
+/*-- fecha: 6-11-2017. -- */
+/*-- version: 2 -- */
+#panel_login {
+	position: absolute;
+	top: 150px;
+	left: 300px;
+	width: auto;
+	height: auto;
+	background-color: rgb(215, 215, 35);
+}

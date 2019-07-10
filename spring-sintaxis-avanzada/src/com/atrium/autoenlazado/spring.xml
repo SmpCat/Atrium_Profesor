@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FICHERO DE CONFIGURACION DE SPRING -->
+<!-- EJEMPLO USO DE AUTOENLAZADO -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 15-3-2017 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<beans default-lazy-init="true" default-autowire="byName"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- AUTOWIRE="BYNAME" LOS NOMBRES DE LOS BEANS HAN DE SER IGUALES AL NOMBRE 
+		DE LA PROPIEDAD A INYECTAR -->
+	<bean id="guitarra" class="com.atrium.autoenlazado.Guitarra" />
+	<bean id="piano" class="com.atrium.autoenlazado.Piano" />
+	<bean id="violin" class="com.atrium.autoenlazado.Violin" />
+	<bean id="orquesta_name" class="com.atrium.autoenlazado.Orquesta"
+		autowire="byName" />
+
+	<!-- AUTOWIRE="BYTYPE" EL TIPO DE LOS BEANS HAN DE SER IGUALES AL TIPO DE 
+		LA PROPIEDAD A INYECTAR -->
+	<bean id="orquesta_type" class="com.atrium.autoenlazado.Orquesta"
+		autowire="byType" />
+
+	<!-- AUTOWIRE="CONSTRUCTOR" INYECTA LOS ARGUMENTOS DEL CONSTRUCTOR CON BEANS 
+		DECLARADOS -->
+	<bean id="orquesta_cons" class="com.atrium.autoenlazado.Orquesta"
+		autowire="constructor" />
+
+
+
+</beans>

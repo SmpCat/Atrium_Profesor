@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- DEFINICION DEL DOCUMENTO XML DEL EJERCICIO DE FORMULARIO -->
+<!-- autor: Juan Antonio Solves Garcia -->
+<!-- version: 1.0 -->
+<!-- fecha: 29-9-2016 -->
+
+<!DOCTYPE datos_formulario SYSTEM "./datos.dtd">
+<datos_formulario>
+	<fecha>29-9-2016</fecha>
+	<autor>Profesor</autor>
+	<formulario>
+		<nombre>Juan Antonio</nombre>
+		<apellido>Solves</apellido>
+		<calle>Calle Java</calle>
+		<ciudad>Sun MicroSystem</ciudad>
+	</formulario>
+</datos_formulario>

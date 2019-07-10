@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" default-lazy-init="true"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- ********** OPCIONES ESPECIFICAS DE SPRING MVC ********* -->
+	<!-- INDICACION DE DEFINICION DE CONTROLLER POR ANOTACIONES -->
+	<mvc:annotation-driven />
+
+	<!-- ***** RESOLUTOR DE VISTAS ****** -->
+	<!-- RESOLUTOR DE VISTAS BASICO PARA PAGINAS JSP CON EXPRESIONES DINAMICAS -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- ********** OPCIONES COMUNES DE SPRING ********** -->
+	<!-- COMPONENTE QUE GESTIONA LA RECEPCION DE FICHEROS EN EL SERVIDOR -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<!-- **** RECURSOS ADICIONALES PARA LA IDIOMATIZACION DE LA APLICACION **** -->
+	<!-- DECLARACION DE RECURSOS IDIOMATICOS PARA ENTORNOS DINAMICOS DE WEB -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:com/atrium/idiomas/textos" />
+	</bean>
+	<!-- GESTOR DE IDIOMAS POR SESION -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
+		lazy-init="false">
+		<!-- SIN EL IDIOMA POR DEFECTO PONE EL PREFERIDO DE LA CABECERA DE LA PETICION -->
+		<!-- <property name="defaultLocale" value="es" /> -->
+	</bean>
+	<!-- OBJETO QUE NOS PERMITIRA CAMBIAR EL IDIOMA DE DINAMICAMENTE POR CODIGO -->
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="language" />
+	</bean>
+	<!-- * FIN RECURSOS ADICIONALES PARA LA IDIOMATIZACION DE APLICACION * -->
+
+	<!-- ***** DEFINICION DE PAQUETES A BUSCAR ANOTACIONES ***** -->
+	<!-- ACCIONES DE LA APLICACION (CONTROLLER) -->
+	<context:component-scan base-package="com.atrium.controller" />
+
+</beans>

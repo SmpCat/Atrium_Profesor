@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" default-lazy-init="true"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- ACCESOS AL WEBAPLICATIONCONTEXT EN CUALQUIER PUNTO DE LA APLICACION -->
+	<bean id="acceso" class="com.atrium.spring.Acceso_ApplicationContext"
+		scope="singleton" lazy-init="false" />
+
+	<!-- LOGICA DE PROCESO AJAX -->
+	<bean id="logica_ajax" class="com.atrium.negocio.Logica_ListasAJAX"
+		scope="prototype" />
+	<!-- CONVERSOR A FORMATO JSON -->
+	<bean id="conversor_json" class="com.atrium.conversores.Conversor_JSON"
+		scope="prototype" />
+
+</beans>

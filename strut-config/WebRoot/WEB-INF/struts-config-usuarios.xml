@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- ****** FICHERO DE CONFIGURACION DE STRUT 1.X ****** -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 6-11-2017. ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<struts-config>
+	<form-beans />
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<!-- ACCION DE NAVEGACION PARA LA COMPROBACION DE LOS FICHEROS MULTIPLES 
+			DE CONFIGURACION -->
+		<action path="/config-usuarios" type="org.apache.struts.actions.ForwardAction"
+			parameter="/prueba_usuarios.jsp" />
+	</action-mappings>
+
+</struts-config>
+

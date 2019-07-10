@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="master" database="MASTER" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="REGISTRO_USUARIOS">
+      <Drawing expanded="true" location="435,115" dimensions="243,169" />
+      <Columns>
+        <Column name="CODIGO_REGISTRO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="CODIGO_USUARIO" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR2" size="20" />
+        </Column>
+        <Column name="FECHA_ENTRADA" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="FECHA_SALIDA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="DURACION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="50" />
+        </Column>
+        <Column name="FICHEROS_SUBIDOS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="3" />
+        </Column>
+        <Column name="INFORMACION_SUBIDA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="NUMBER" size="10,2" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="TAREAS_REALIZADAS">
+      <Drawing expanded="true" location="25,33" dimensions="279,168" />
+      <Columns>
+        <Column name="CODIGO_TAREAREALIZADA" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="USUARIO" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR2" size="20" />
+        </Column>
+        <Column name="CODIGO_TAREAUSUARIO" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="FECHA_REALIZACION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" size="7" />
+        </Column>
+        <Column name="DATOS_AÑADIDOS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BLOB" size="4000" />
+        </Column>
+        <Column name="DATOS_MODIFICADOS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BLOB" size="4000" />
+        </Column>
+        <Column name="DATOS_ELIMINADOS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BLOB" size="4000" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="TAREAS_USUARIOS">
+      <Drawing expanded="true" location="18,288" dimensions="287,89" />
+      <Columns>
+        <Column name="CODIGO_TAREAUSUARIO" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="NUMBER" size="10" />
+        </Column>
+        <Column name="DESCRIPCION_TAREAUSUARIO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="150" />
+        </Column>
+        <Column name="ESTADO_TAREA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR2" size="2" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="TAREA_USUARIO_FK">
+      <Details primary_table="TAREAS_USUARIOS" foreign_table="TAREAS_REALIZADAS">
+        <PrimaryKeys>
+          <ColumnName name="CODIGO_TAREAUSUARIO" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="CODIGO_TAREAUSUARIO" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

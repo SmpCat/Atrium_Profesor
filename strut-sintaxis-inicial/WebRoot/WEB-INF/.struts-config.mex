@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/NOMBRE -- IDENTIFICADOR.do" location="350,250" dimension="261,116" />
+  <StrutsActivity path="NOMBRE -- IDENTIFICADOR;6" location="650,50" dimension="262,96" />
+  <StrutsActivity path="RUTA Y NOMBRE DE LA PAGINA" location="50,150" dimension="249,56" />
+  <StrutsActivity path="RUTA Y NOMBRE DE LA PAGINA EN CASO DE ERROR EN VALIDACION" location="950,250" dimension="500,56" />
+  <StrutsTransition id="NOMBRE -- IDENTIFICADOR;6,null,RUTA Y NOMBRE DE LA PAGINA,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,98" />
+      <AbsolutePoint location="174,98" />
+      <AbsolutePoint location="174,150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="RUTA Y NOMBRE DE LA PAGINA EN CASO DE ERROR EN VALIDACION,null,/NOMBRE -- IDENTIFICADOR.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,278" />
+      <AbsolutePoint location="611,278" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/NOMBRE -- IDENTIFICADOR.do,NOMBRE -- IDENTIFICADOR,RUTA Y NOMBRE DE LA PAGINA,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,308" />
+      <AbsolutePoint location="174,308" />
+      <AbsolutePoint location="174,206" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

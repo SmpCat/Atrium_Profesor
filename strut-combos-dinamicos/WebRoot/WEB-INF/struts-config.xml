@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- ****** FICHERO DE CONFIGURACION DE STRUT ****** -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 3-11-2017 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<struts-config>
+	<form-beans>
+		<!-- ******** ZONA DE OBJETOS DE DOMINIO (DATOS)******** -->
+		<!-- PARA USO EN EL EJEMPLO DE LISTAS -->
+		<form-bean name="listas_bean" type="com.atrium.formbeans.Listas_Bean">
+			<description>DATOS PARA EL EJEMPLO DE LISTAS DINAMICAS</description>
+		</form-bean>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<!-- ACCION EJEMPLO DE USO DE LISTAS DINAMICAS -->
+		<action path="/listas_accion" type="com.atrium.acciones.Listas_Accion"
+			name="listas_bean" input="/jsp/ejemplo_listas.jsp" parameter="tipo_peticion" />
+	</action-mappings>
+
+	<!-- ******** ZONA DE RECURSOS IDIOMATICOS (PROPERTIES) ******** -->
+	<message-resources parameter="com.atrium.idiomas.textos_es" />
+
+</struts-config>
+

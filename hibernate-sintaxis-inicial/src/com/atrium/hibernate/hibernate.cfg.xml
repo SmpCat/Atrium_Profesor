@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- FICHERO DE CONFIGURACION DE HIBERNATE ** EJEMPLO NO FUNCIONAL -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 17-10-2016 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- ***** DATOS DE CONEXION ***** -->
+		<property name="connection.url">
+			jdbc:oracle:thin:@a3-server:1521:XE
+		</property>
+		<property name="connection.username">master</property>
+		<property name="connection.password">master</property>
+		<property name="connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<!-- ***** FIN DATOS DE CONEXION ***** -->
+
+		<!-- ***** AJUSTES PROPIOS ***** -->
+		<!-- TIPO DE SQL -->
+		<property name="dialect">
+			org.hibernate.dialect.Oracle10gDialect
+		</property>
+		<!-- TRAZADO POR CONSOLA DE LA ORDENES -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="use_sql_comments">true</property>
+		<!-- GENERACION DE ESTADISTICAS INTERNAS -->
+		<property name="generate_statistics">true</property>
+		<!-- CREACION DE TABLAS A PARTIR DE LAS CLASES DE PERSISTENCIA -->
+		<property name="hbm2ddl.auto">validate | update | create | create-drop  </property>
+		<!-- ***** FIN AJUSTES PROPIOS ***** -->
+
+		<!-- ***** MAPEADO DE RECURSOS ***** -->
+		<mapping class="ruta y nombre de clase" />
+		<mapping resource="ruta y nombre de XML" />
+
+		<!-- ***** FIN MAPEADO DE RECURSOS ***** -->
+
+	</session-factory>
+
+</hibernate-configuration>

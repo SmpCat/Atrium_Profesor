@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB MINIMO ** EJEMPLO NO FUNCIONAL -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 19-4-2017 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- ***** COMPONENTES DE UNA APLICACION WEB ***** -->
+	<!-- SERVLET -->
+	<servlet>
+		<servlet-name>nombre servlet</servlet-name>
+		<servlet-class>ruta nombre clase</servlet-class>
+		<!-- PARAMETRO DE CONFIGURACION DEL SERVLET -->
+		<init-param>
+			<param-name>nombre parametro</param-name>
+			<param-value>valor parametro</param-value>
+		</init-param>
+	</servlet>
+	<!-- PETICIONES QUE ATENDERA EL SERVLET -->
+	<servlet-mapping>
+		<servlet-name>nombre servlet</servlet-name>
+		<url-pattern>url de peticiones a tratar</url-pattern>
+		<url-pattern>/texto</url-pattern>
+		<url-pattern>/*.do</url-pattern>
+		<url-pattern>/*.*</url-pattern>
+	</servlet-mapping>
+	<!-- FIN SERVLET -->
+
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+	<welcome-file-list>
+		<welcome-file>ruta de carpetas nombre pagina</welcome-file>
+	</welcome-file-list>
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+
+</web-app>

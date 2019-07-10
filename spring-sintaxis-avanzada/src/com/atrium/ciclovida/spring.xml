@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FICHERO DE CONFIGURACION DE SPRING -->
+<!-- EJEMPLO USO DE AUTOENLAZADO -->
+<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+<!-- ****** FECHA: 15-3-2017 ****** -->
+<!-- ****** VERSION: 1.5 ****** -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="miBean" class="com.atrium.ciclovida.Factoria"
+		factory-method="crearBean" />
+	<!-- LLAMADA A OTRO FICHERO DE CONFIGURACION DE SPRING -->
+	<import resource="otro.xml" />
+
+</beans>

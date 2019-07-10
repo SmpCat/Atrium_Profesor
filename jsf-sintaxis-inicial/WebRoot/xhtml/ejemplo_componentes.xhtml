@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!-- Pagina ejemplo de componentes JSF -->
+<!-- fecha: 20-4-2017. -->
+<!-- version: 2.7-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+<h:head>
+	<title>JSF 2.2 Page</title>
+	<meta name="keywords" content="enter,your,keywords,here" />
+	<meta name="description" content="A short description of this page." />
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+<h:body>
+	<!-- DEFINICION DE FORMULARIO -->
+	<h:form id="formu_componentes">
+		<!-- COMPONENTES DE TEXTO -->
+		<h:outputText id="" value="texto a mostrar" />
+		<h:inputText />
+		<h:inputSecret />
+		<h:inputTextarea />
+		<h:inputHidden />
+		<!-- BOTONES -->
+		<h:commandButton action="" actionListener="" />
+		<!-- HIPERVINCULOS -->
+		<h:link />
+		<!-- IMAGENES -->
+		<h:graphicImage />
+		<!-- SUBIDA DE FICHEROS -->
+		<h:inputFile />
+	</h:form>
+	<h:form id="formu_seleccion">
+		<h:panelGrid columns="4">
+			<!-- COMPONENTES DE SELECCION UNICA -->
+			<h:selectBooleanCheckbox>
+				<!-- SE MUESTRA UN UNICO CHECKBOX A ELEGIR -->
+			</h:selectBooleanCheckbox>
+			<h:selectOneListbox>
+				<!-- SE MUESTRAN MULTIPLES OPCIONES -->
+				<!-- CONTENIDO ESTATICO -->
+				<f:selectItem />
+				<!-- CONTENIDO DINAMICO -->
+				<f:selectItems />
+			</h:selectOneListbox>
+			<h:selectOneRadio>
+				<!-- SE MUESTRAN MULTIPLES RADIO BUTTONS -->
+				<!-- CONTENIDO ESTATICO -->
+				<f:selectItem />
+				<!-- CONTENIDO DINAMICO -->
+				<f:selectItems />
+			</h:selectOneRadio>
+			<h:selectOneMenu>
+				<!-- SE MUESTRA EL COMBO  -->
+				<!-- CONTENIDO ESTATICO -->
+				<f:selectItem />
+				<!-- CONTENIDO DINAMICO -->
+				<f:selectItems />
+			</h:selectOneMenu>
+		</h:panelGrid>
+		<h:panelGrid columns="3">
+			<!-- COMPONENTES DE SELECCION MULTIPLE -->
+			<h:selectManyMenu>
+				<!-- SE MUESTRA UN COMBO -->
+				<!-- CONTENIDO ESTATICO -->
+				<f:selectItem />
+				<!-- CONTENIDO DINAMICO -->
+				<f:selectItems />
+			</h:selectManyMenu>
+			<h:selectManyCheckbox>
+				<!-- SE MUESTRAN MUCHOS CHECKBOX -->
+				<!-- CONTENIDO ESTATICO -->
+				<f:selectItem />
+				<!-- CONTENIDO DINAMICO -->
+				<f:selectItems />
+			</h:selectManyCheckbox>
+			<h:selectManyListbox>
+				<!-- SE MUESTRA UNA LISTA -->
+				<!-- CONTENIDO ESTATICO -->
+				<f:selectItem />
+				<!-- CONTENIDO DINAMICO -->
+				<f:selectItems />
+			</h:selectManyListbox>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

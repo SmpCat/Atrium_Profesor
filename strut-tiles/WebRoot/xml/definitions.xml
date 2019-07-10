@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+"http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<!-- Definicion de Tiles para Strut -->
+<!-- autor: Juan Antonio Solves Garcia. -->
+<!-- fecha: 6-11-2017. -->
+<!-- version: 2.0. -->
+
+<tiles-definitions>
+	<!-- DEFINICION DE CONTENIDOS -->
+	<!-- PLANTILLA PRIMARIA -->
+	<definition name="contenido_menu" template="/jsp/plantillas/plantilla_tiles.jsp">
+		<description>PLANTILLA PRINCIPAL DE LA APLICACION</description>
+		<put name="banner" value="/jsp/contenidos/contenido_banner_xml.jsp" />
+		<put name="menu" value="/jsp/contenido_menu.jsp" />
+		<put name="contenido" value="/jsp/login.jsp" />
+	</definition>
+	<!-- PLANTILLA SECUNDARIA -->
+	<definition name="contenido_banner" template="/jsp/plantillas/plantilla_banner.jsp">
+		<description>PLANTILLA SECUNDARIA QUE ESTARA DENTRO DE LA PRINCIPAL</description>
+		<put name="logo" value="/jsp/logo.jsp" />
+		<put name="selector_idioma" value="/jsp/idioma.jsp" />
+	</definition>
+	<!-- CAMBIOS EN LA PARTE DE CONTENIDO -->
+	<definition name="contenido_uno" extends="contenido_menu">
+		<put name="contenido" value="/jsp/otra_pagina.jsp" />
+	</definition>
+	<definition name="contenido_dos" extends="contenido_menu">
+		<put name="contenido" value="/jsp/otrasegunda_pagina.jsp" />
+	</definition>
+</tiles-definitions>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<!-- Fichero descriptor de etiquetas personalizadas -->
+<!-- version: 2.0 -->
+<!-- fecha: 8-2-2017. -->
+
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.5</jsp-version>
+	<short-name>etiquetas</short-name>
+	<uri>http://com.atrium.strut/etiquetas_propias</uri>
+
+	<tag>
+		<name>calculo_ficherossubidos</name>
+		<tag-class>com.atrium.etiquetas.Ficheros_Subidos</tag-class>
+		<body-content>tagdependent</body-content>
+		<description>CREARA UNA TABLA CON EL CONTENIDO DE LA CARPETA DEL
+			USUARIO</description>
+		<attribute>
+			<name>nombre_usuario</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>clave_usuario</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+</taglib>

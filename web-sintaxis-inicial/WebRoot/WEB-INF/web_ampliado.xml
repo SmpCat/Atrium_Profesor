@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB ** EJEMPLO NO FUNCIONAL -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 19-4-2017 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- ***** COMPONENTES DE UNA APLICACION WEB ***** -->
+	<!-- SERVLET -->
+	<servlet>
+		<servlet-name>nombre servlet</servlet-name>
+		<servlet-class>ruta nombre clase</servlet-class>
+		<!-- PARAMETRO DE CONFIGURACION DEL SERVLET -->
+		<init-param>
+			<param-name>nombre parametro</param-name>
+			<param-value>valor parametro</param-value>
+		</init-param>
+	</servlet>
+	<!-- PETICIONES QUE ATENDERA EL SERVLET -->
+	<servlet-mapping>
+		<servlet-name>nombre servlet</servlet-name>
+		<url-pattern>url de peticiones a tratar</url-pattern>
+		<url-pattern>/texto</url-pattern>
+		<url-pattern>/*.do</url-pattern>
+		<url-pattern>/*.*</url-pattern>
+	</servlet-mapping>
+	<!-- FIN SERVLET -->
+
+	<!-- FILTRO -->
+	<filter>
+		<filter-name>nombre filtro</filter-name>
+		<filter-class>ruta y clase</filter-class>
+		<!-- PARAMETRO DE CONFIGURACION DEL FILTRO -->
+		<init-param>
+			<param-name>nombre parametro</param-name>
+			<param-value>valor parametro</param-value>
+		</init-param>
+	</filter>
+	<!-- PETICIONES QUE ATENDERA EL FILTRO -->
+	<filter-mapping>
+		<filter-name>nombre filtro</filter-name>
+		<url-pattern>url de peticiones a tratar</url-pattern>
+		<url-pattern>/texto</url-pattern>
+		<url-pattern>/*.do</url-pattern>
+		<url-pattern>/*.*</url-pattern>
+	</filter-mapping>
+	<!-- FIN FILTRO -->
+
+	<!-- ESCUCHADOR EVENTO -->
+	<listener>
+		<listener-class>ruta y clase</listener-class>
+	</listener>
+	<!-- FIN ESCUCHADOR EVENTO -->
+	<!-- ***** FIN COMPONENTES DE UNA APLICACION WEB ***** -->
+
+	<!-- ***** PARAMETRO DE CONFIGURACION ***** -->
+	<context-param>
+		<param-name>nombre parametro</param-name>
+		<param-value>valor parametro</param-value>
+	</context-param>
+	<!-- ***** FIN PARAMETRO DE CONFIGURACION ***** -->
+
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+	<welcome-file-list>
+		<welcome-file>ruta y nombre de la pagina de incial</welcome-file>
+	</welcome-file-list>
+	<!-- ***** PRIMERA PAGINA DEL SITIO ***** -->
+
+
+	<!-- ***** DEFINICION DE PAGINAS DE ERROR A NIVEL DE APLICACION ***** -->
+	<!-- TRATAMIENTO POR CODIGO HTTP -->
+	<error-page>
+		<error-code>999</error-code>
+		<location>/RUTA Y NOMBRE DE PAGINA</location>
+	</error-page>
+	<!-- TRATAMIENTO POR TIPO DE EXCEPCION DE JAVA -->
+	<error-page>
+		<exception-type>PAQUETES Y CLASE DE EXCEPCION</exception-type>
+		<location>/RUTA Y NOMBRE DE PAGINA</location>
+	</error-page>
+
+	<!-- ***** DEFINICION DE ATRIBUTOS PARA PAGINAS JSP ***** -->
+	<jsp-config>
+		<!-- DEFINICION DE DIRECTIVAS TAGLIB -->
+		<taglib>
+			<taglib-uri>identificador de tld</taglib-uri>
+			<taglib-location>ruta y nombre del fichero</taglib-location>
+		</taglib>
+		<!-- AGRUPAMIENTOS DE PAGINAS PARA DEFINICION GRUPAL -->
+		<jsp-property-group>
+			<url-pattern>patron de paginas</url-pattern>
+			<page-encoding>ISO-8859-15</page-encoding>
+		</jsp-property-group>
+	</jsp-config>
+
+	<!-- ***** DEFINICION DEL TIMEOUT DE LAS SESIONES A NIVEL DE APLICACION 
+		EN MINUTOS ***** -->
+	<session-config>
+		<session-timeout>99</session-timeout>
+	</session-config>
+
+</web-app>

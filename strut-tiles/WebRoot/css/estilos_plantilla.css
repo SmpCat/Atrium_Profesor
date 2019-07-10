@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+
+/* Estilos plantilla principal --* /
+/* autor: Juan Antonio Solves Garcia. */
+/*-- fecha: 6-11-2017. -- */
+/*-- version: 2 -- */
+
+div {
+	margin: 0px;
+	padding: 0px;
+}
+
+#capa_banner {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 85px;
+	background-color: rgb(173, 216, 230);
+}
+
+#capa_menu {
+	position: absolute;
+	top: 86px;
+	left: 0px;
+	width: 200px;
+	height: 100%;
+	background-color: rgb(224, 255, 255);
+}
+
+#capa_contenido {
+	position: absolute;
+	top: 86px;
+	left: 201px;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(135, 206, 250);
+}

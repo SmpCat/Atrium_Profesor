@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>strut-acciones-multiples</display-name>
+
+	<!-- FICHERO DE CONFIGURACION DE APLICACION WEB CON STRUT1 -->
+	<!-- ****** AUTOR: JUAN ANTONIO SOLVES GARCIA ****** -->
+	<!-- ****** FECHA: 6-11-2017 ****** -->
+	<!-- ****** VERSION: 1.5 ****** -->
+
+	<!-- ZONA DE SERVLET -->
+	<!-- CONTROLADOR FRONTAL DE LA APLICACION (FACHADA) -->
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<!-- PARAMETRO QUE INDICA RUTA Y NOMBRE DEL FICHERO DESCRIPTOR DE STRUT -->
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<!-- FIN ZONA DE SERVLET -->
+
+	<!-- MECANISMO DE INICIO DE APLICACION CON PRIMERA PAGINA DE RESPUESTA -->
+	<welcome-file-list>
+		<welcome-file>jsp/prueba_accionesmultiples.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

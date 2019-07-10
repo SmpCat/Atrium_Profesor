@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/asm-all-repackaged-2.2.0-b21.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/cglib-2.2.0-b21.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/guava-14.0.1.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/hk2-api-2.2.0-b21.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/hk2-locator-2.2.0-b21.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/hk2-utils-2.2.0-b21.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/javax.annotation-api-1.2.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/javax.inject-2.2.0-b21.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/javax.ws.rs-api-2.0.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/jersey-client-2.4.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/jersey-common-2.4.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/rest/osgi-resource-locator-1.0.1.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/aopalliance-repackaged-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/hk2-api-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/hk2-locator-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/hk2-utils-2.3.0-b10.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/jackson-annotations-2.3.2.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/jackson-core-2.3.2.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/jackson-databind-2.3.2.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/jackson-jaxrs-base-2.3.2.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/jackson-jaxrs-json-provider-2.3.2.jar"/>
+	<classpathentry kind="lib" path="src/com/atrium/jar/jackson/jackson-module-jaxb-annotations-2.3.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
